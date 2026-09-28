@@ -483,9 +483,12 @@ if (btnEmpezar) {
     tituloPregunta.textContent = p.pregunta; // Texto de la pregunta
 
     radios.forEach((radio, i) => {
-      document.getElementById(radio.id + "_text").textContent = opciones[i]; // Se busca el texto correspondiente
+      const label = document.getElementById(radio.id + "_text");
+      label.textContent = opciones[i]; // Se busca el texto correspondiente
       radio.value = opciones[i]; // Se asigna el valor
       radio.checked = false; // Desmarca todas las opciones
+      radio.disabled = false;
+      label.classList.remove("Correcta");
     });
   }
 
@@ -500,14 +503,24 @@ if (btnEmpezar) {
     if (seleccionada.value === ronda[preguntaActual - 1].correcta) { // Si la respuesta es correcta
       puntaje += PUNTOS_POR_PREGUNTA; // Se incrementa el puntaje
       spanScore.textContent = puntaje; // Se actualiza el texto del puntaje
+      
     }
+
+    radios.forEach((radio)=>{
+      const label= document.getElementById(radio.id + "_text");
+      if (radio.value === ronda[preguntaActual - 1].correcta){
+        label.classList.add("Correcta");
+      }
+      radio.disabled=true;
+    });
 
     preguntaActual++; // Siguiente pregunta
 
     if (preguntaActual <= ronda.length) { // Se comprueba que aún queden preguntas
-      cargarPregunta();
-    } else {
-      terminarRonda(false); // Es false porque solo es true si se acabó el tiempo
+      setTimeout(() => {cargarPregunta()}, 1000);
+      
+    } else { // Es false porque solo es true si se acabó el tiempo
+      setTimeout(() => {terminarRonda(false)}, 1000);
     }
   }
 
