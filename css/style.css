@@ -491,6 +491,8 @@ button {
 .Correcta{
   background-color: #6af145;
   color: black;
+  padding: 5px;
+  border-radius: 15px;
   transition-duration: 0.4s;
 }
 
