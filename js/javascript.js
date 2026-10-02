@@ -483,6 +483,8 @@ if (btnEmpezar) {
     tituloPregunta.textContent = p.pregunta; // Texto de la pregunta
 
     radios.forEach((radio, i) => {
+      const bloque = radio.parentElement;
+      bloque.classList.remove("Correcta");
       const label = document.getElementById(radio.id + "_text");
       label.textContent = opciones[i]; // Se busca el texto correspondiente
       radio.value = opciones[i]; // Se asigna el valor
@@ -507,9 +509,9 @@ if (btnEmpezar) {
     }
 
     radios.forEach((radio)=>{
-      const label= document.getElementById(radio.id + "_text");
+      const bloque = radio.parentElement;
       if (radio.value === ronda[preguntaActual - 1].correcta){
-        label.classList.add("Correcta");
+        bloque.classList.add("Correcta");
       }
       radio.disabled=true;
     });
