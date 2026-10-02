@@ -582,3 +582,81 @@ if (slides && slideElements.length && dots.length && nextButton && previousButto
     );
   });
 }
+
+//EQUIPOS CARRUSEL
+if (document.getElementById("equipo-nombre")) {
+
+  const equiposInfo = [
+    {
+      nombre: "Diablos Rojos del México",
+      logo: "assets/logos/diablosrojos.png",
+      info: `
+        <p>Los Diablos Rojos, provenientes de la ciudad de México, son uno de los equipos más famosos, quienes actualmente cuentan con un alto porcentaje de victorias, siendo los líderes de la zona sur en el país.</p>
+
+        <h5>Pasado</h5>
+        <p>Fundados el 11 de febrero de 1940, por Salvador Lutteroth y Ernesto Carmona, Los Rojos de México (como se les conocía en sus inicios) arrancaron con fuerza al tener una rivalidad entretenida contra los extintos Azules de Veracruz; posterior a esto y gran parte de la década de los 40s quedaron relegados a segundo plano y tuvieron un paso desapercibido.</p>
+        <p>Fue durante sus primeros dos años que surge su apodo de los diablos con la frase “Estos rojos juegan como Diablos”, lo que posteriormente influenciaría el nombre del equipo. Es hasta mediados de la década de los 50 que los Diablos Rojos lograron sobresalir, en 1956 con el primer lugar de la temporada ganando su primer gallardete sobre los Tigres de Quintana Roo, y en 1957 y 1958 como subcampeón.</p>
+        <p>De ahí en adelante el equipo tendría distintas épocas, con rachas de victorias y campeonatos hasta años de decadencia, donde los capitalinos pasaron por distintos dueños.</p>
+        <p>Varios jugadores destacados son Alfredo “El zurdo” Ortiz usando el 15 en su camisa, Ramón “El Diablo” Montoya, Alonso Perry obteniendo una triple corona de bateo, Salomé Barojas quien fue nombrado mejor relevista del año dos veces, Ty Gainey obteniendo el porcentaje de slugging más alto en 1994 (El slugging refleja la cantidad de almohadillas que un pelotero alcanza en sus turnos debido a conexiones, dando mayor valor a extrabases como dobles, triples y jonrones), entre muchos otros.</p>
+
+        <h5>Actualidad</h5>
+        <p>Hoy en día Los Diablos Rojos los maneja Alfredo Harp Helú, quien los compró en 1994 y sigue siendo su presidente hoy en día. El estadio actual de los Diablos Rojos lleva su nombre.</p>
+        <p>Cuentan con 1 título de BCL Americas (Baseball Champions League Americas), 18 títulos de la Liga Mexicana de Baseball, y de títulos divisionales llevan la cuenta de 5 en Zona Norte, 3 en Zona centro y 14 en Zona Sur.</p>
+      `
+    },
+    { nombre: "Olmecas de Tabasco", logo: "assets/logos/olmecas.png", info: null },
+    { nombre: "Bravos de León",     logo: "assets/logos/bravos.png",  info: null }
+  ];
+
+  let equipoSel = 0;
+  const elNombre = document.getElementById("equipo-nombre");
+  const elActual = document.getElementById("logo-actual");
+  const elPrev   = document.getElementById("logo-prev");
+  const elNext   = document.getElementById("logo-next");
+  const elPuntos = document.getElementById("equipo-puntos");
+  const elInfo   = document.getElementById("equipo-info");
+
+  equiposInfo.forEach((_, i) => {
+    const punto = document.createElement("span");
+    punto.addEventListener("click", () => irAEquipo(i));
+    elPuntos.appendChild(punto);
+  });
+
+  function irAEquipo(i) {
+    const total = equiposInfo.length;
+    equipoSel = (i + total) % total; // navegacion circular
+    const eq   = equiposInfo[equipoSel];
+    const prev = equiposInfo[(equipoSel - 1 + total) % total];
+    const next = equiposInfo[(equipoSel + 1) % total];
+
+    elNombre.textContent = eq.nombre;
+    elActual.src = eq.logo;  elActual.alt = eq.nombre;
+    elPrev.src   = prev.logo; elPrev.alt  = prev.nombre;
+    elNext.src   = next.logo; elNext.alt  = next.nombre;
+
+    [...elPuntos.children].forEach((p, idx) =>
+      p.classList.toggle("activo", idx === equipoSel));
+
+    elInfo.innerHTML = `
+      <h4>${eq.nombre}</h4>
+      ${eq.info ? eq.info : "<p>Información próximamente.</p>"}
+      <img src="${eq.logo}" alt="${eq.nombre}">
+    `;
+  }
+
+  document.getElementById("equipo-prev").addEventListener("click", () => irAEquipo(equipoSel - 1));
+  document.getElementById("equipo-next").addEventListener("click", () => irAEquipo(equipoSel + 1));
+  elPrev.addEventListener("click", () => irAEquipo(equipoSel - 1));
+  elNext.addEventListener("click", () => irAEquipo(equipoSel + 1));
+
+  // Deslizar con el dedo para celular
+  let inicioX = 0;
+  const zonaSwipe = document.querySelector(".selector-logos");
+  zonaSwipe.addEventListener("touchstart", e => { inicioX = e.touches[0].clientX; });
+  zonaSwipe.addEventListener("touchend", e => {
+    const dx = e.changedTouches[0].clientX - inicioX;
+    if (Math.abs(dx) > 40) irAEquipo(equipoSel + (dx < 0 ? 1 : -1));
+  });
+
+  irAEquipo(0);
+}

@@ -25,6 +25,25 @@
         <div class="contenedor-general"> <!--No se como ponerle la esctructura a este div xd-->
           <h2 class="titulo-interior">EQUIPOS</h2>
           
+            <!-- selector de equipos -->
+             <section class="selector-equipos">
+                <h3 id="equipo-nombre" class="selector-nombre"></h3>
+                <div class="selector-carrusel">
+                  <button class="selector-flecha" id="equipo-prev" aria-label="Equipo anterior">&#10094;</button>
+                  <div class="selector-logos">
+                    <img id="logo-prev" class="logo-lateral" alt="">
+                    <img id="logo-actual" class="logo-central" alt="">
+                    <img id="logo-next" class="logo-lateral" alt="">
+                  </div>
+                  <button class="selector-flecha" id="equipo-next" aria-label="Equipo siguiente">&#10095;</button>
+                </div>
+                <div class="selector-puntos" id="equipo-puntos"></div>
+              </section>
+
+         <!-- Id para encontrar al equipo seleccionado-->
+         <section id="equipo-info" class="equipo-info"></section>
+
+
         </div>
       </main>
       <script src="js/javascript.js"></script>
