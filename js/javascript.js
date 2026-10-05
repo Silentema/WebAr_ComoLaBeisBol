@@ -87,13 +87,13 @@ const equipos = [
       {pregunta: "¿De dónde viene el nombre 'Leones'?",
         opciones: ["De una cervecera", "Por un parque", "Por un León real"],
         correcta: "De una cervecera"},
-      {pregunta: "¿Cuál fue el resultado de su partido debut?",
+      {pregunta: "¿Cuál fue el resultado del partido debut para los Leones?",
         opciones: ["Victoria 8-0 contra los Tecolotes de Nuevo Laredo", "Derrota 1-5 contra los Olmecas de Tabasco", "Victoria 4-0 contra los Sultanes de Monterrey"],
         correcta: "Victoria 8-0 contra los Tecolotes de Nuevo Laredo"},
-      {pregunta: "¿Cuál es el apodo de su afición?",
+      {pregunta: "¿Cuál es el apodo de la afición de los leones?",
         opciones: ["Los Reyes", "Los Felinos", "Los Melenudos"],
         correcta: "Los Melenudos"},
-      {pregunta: "¿Cuál es el apodo de su estadio 'Kukulcán Álamo'?",
+      {pregunta: "¿Cuál es el apodo del estadio de los Leones 'Kukulcán Álamo'?",
         opciones: ["La Guarida", "La Cueva", "La Sabana"],
         correcta: "La Cueva"}
       ]
@@ -111,10 +111,10 @@ const equipos = [
       {pregunta: "¿Cuál es el apodo de los Olmecas de Tabasco?",
         opciones: ["Los Cabezones", "Los Chocos", "Los Jaguares"],
         correcta: "Los Cabezones"},
-      {pregunta: "¿En qué año obtuvieron su único título?",
+      {pregunta: "¿En qué año obtuvieron su único título los Olmecas?",
         opciones: ["1990", "1993", "1997"],
         correcta: "1993"},
-      {pregunta: "¿Cuál fue uno de los nombres antiguos del equipo?",
+      {pregunta: "¿Cuál fue uno de los nombres antiguos del equipo de Los Olmecas?",
         opciones: ["Cardenales", "Guerreros", "Petroleros"],
         correcta: "Cardenales"}
       ]
@@ -132,10 +132,10 @@ const equipos = [
       {pregunta: "¿Cómo se llama la mascota de los Pericos de Puebla?",
         opciones: ["Panchito el perico", "Pepe el perico", "Paco el perico"],
         correcta: "Pepe el perico"},
-      {pregunta: "¿En qué año obtuvieron su último título?",
+      {pregunta: "¿En qué año obtuvieron su último título Los Pericos?",
         opciones: ["2018", "2021", "2023"],
         correcta: "2023"},
-      {pregunta: "¿Qué otro nombre llegó a tener la franquicia?",
+      {pregunta: "¿Qué otro nombre llegó a tener la franquicia de Los Pericos?",
         opciones: ["Ángeles Negros", "Águilas Blancas", "Halcones de Puebla"],
         correcta: "Ángeles Negros"}
     ]
@@ -147,16 +147,16 @@ const equipos = [
       {pregunta: "Año de fundación de los Piratas de Campeche",
         opciones: ["1976", "1980", "1984"],
         correcta: "1980"},
-      {pregunta: "¿Qué franquicia heredaron para su fundación?",
+      {pregunta: "¿Qué franquicia heredaron para su fundación los Piratas?",
         opciones: ["Alacranes de Durango", "Mineros de Zacatecas", "Algodoneros de Unión Laguna"],
         correcta: "Alacranes de Durango"},
-      {pregunta: "¿Cómo se llama la mascota inspirada en un pirata holandés?",
+      {pregunta: "¿Cómo se llama la mascota inspirada en un pirata holandés de Los Piratas de Campeche?",
         opciones: ["Lorencillo", "Barbanegra", "El Corsario"],
         correcta: "Lorencillo"},
-      {pregunta: "¿Cuál es su sonido para celebrar batazos o carreras importantes?",
+      {pregunta: "¿Cuál es el sonido para celebrar batazos o carreras importantes de Los Piratas?",
         opciones: ["Una campana", "Un cañón", "Una sirena"],
         correcta: "Un cañón"},
-      {pregunta: "¿Qué parte de la ciudad está arraigada a su identidad?",
+      {pregunta: "¿Qué parte de la ciudad está arraigada a la identidad de Los Piratas?",
         opciones: ["Sus murallas", "Su malecón", "Sus plazas"],
         correcta: "Sus murallas"}
     ]
@@ -171,13 +171,13 @@ const equipos = [
       {pregunta: "¿Cuál es el lema de los Tigres de Quintana Roo?",
         opciones: ["El equipo que nació campeón", "El orgullo de Quintana Roo", "Siempre campeones"],
         correcta: "El equipo que nació campeón"},
-      {pregunta: "¿Cuántos títulos de la LMB tienen?",
+      {pregunta: "¿Cuántos títulos de la LMB tienen los Tigres?",
         opciones: ["10", "12", "14"],
         correcta: "12"},
-      {pregunta: "¿En qué ciudad se originó el equipo?",
+      {pregunta: "¿En qué ciudad se originó el equipo de los Tigres?",
         opciones: ["Cancún", "Ciudad de México", "Puebla"],
         correcta: "Ciudad de México"},
-      {pregunta: "¿En qué ciudad se encuentra actualmente el equipo?",
+      {pregunta: "¿En qué ciudad se encuentra actualmente el equipo de los Tigres?",
         opciones: ["Chetumal", "Playa del Carmen", "Cancún"],
         correcta: "Cancún"}
     ]
@@ -189,13 +189,13 @@ const equipos = [
       {pregunta: "¿Cuál era el primer nombre de los Bravos?",
         opciones: ["Cachorros de León", "Leones de León", "Tigres de León"],
         correcta: "Cachorros de León"},
-      {pregunta: "¿Cuál de estos jugadores es un receptor?",
+      {pregunta: "¿Cuál de estos jugadores es un receptor de los Bravos?",
         opciones: ["Ángel López", "Jaime Orozco", "Jack Pierce"],
         correcta: "Ángel López"},
-      {pregunta: "¿Cuándo fue su primer campeonato?",
+      {pregunta: "¿Cuándo fue el primer campeonato de los Bravos?",
         opciones: ["Septiembre de 1988", "Septiembre de 1990", "Septiembre de 1992"],
         correcta: "Septiembre de 1990"},
-      {pregunta: "¿Qué jugador rompió, en 1986, un récord establecido por Héctor Espino?",
+      {pregunta: "¿Qué jugador rompió, en 1986, un récord establecido por Héctor Espino para los Bravos?",
         opciones: ["Jack Pierce", "Roberto Vizcarra", "Wilie Aikens"],
         correcta: "Jack Pierce"},
       {pregunta: "¿Dónde juegan actualmente los Bravos?",
@@ -207,19 +207,19 @@ const equipos = [
   {
     nombre: "Conspiradores de Querétaro", // - - - - - CONSPIRADORES DE QUERÉTARO
     preguntas: [
-      {pregunta: "¿En qué año se fundó el equipo?",
+      {pregunta: "¿En qué año se fundó el equipo de los Conspiradores?",
         opciones: ["2020", "2022", "2024"],
         correcta: "2022"},
-      {pregunta: "¿Por qué obtuvieron ese nombre?",
+      {pregunta: "¿Por qué obtuvieron ese nombre los Conspiradores?",
         opciones: ["Por la Conspiración de 1810", "Por una batalla de 1821", "Por un movimiento de 1910"],
         correcta: "Por la Conspiración de 1810"},
-      {pregunta: "¿Cuántos juegos ganaron durante la temporada 2024?",
+      {pregunta: "¿Cuántos juegos ganaron durante la temporada 2024 Los Conspiradores?",
         opciones: ["45 juegos", "50 juegos", "55 juegos"],
         correcta: "50 juegos"},
-      {pregunta: "¿Cuál de estos jugadores es su receptor?",
+      {pregunta: "¿Cuál de estos jugadores es receptor de los Conspiradores?",
         opciones: ["Daniel Sierra", "Carlos Paulino", "Rio Ruiz"],
         correcta: "Daniel Sierra"},
-      {pregunta: "¿Contra quiénes jugaron por primera vez?",
+      {pregunta: "¿Contra quiénes jugaron por primera vez para Los Conspiradores?",
         opciones: ["Tigres de Quintana Roo", "Diablos Rojos", "Guerreros de Oaxaca"],
         correcta: "Tigres de Quintana Roo"}
     ]
@@ -228,19 +228,19 @@ const equipos = [
   {
     nombre: "Diablos Rojos del México", // - - - - - DIABLOS ROJOS DEL MÉXICO
     preguntas: [
-      {pregunta: "¿En qué año se fundó el equipo?",
+      {pregunta: "¿En qué año se fundó el equipo de los Diablos Rojos?",
         opciones: ["1935", "1940", "1945"],
         correcta: "1940"},
-      {pregunta: "¿Cuántos títulos tienen?",
+      {pregunta: "¿Cuántos títulos tienen los Diablos Rojos?",
         opciones: ["14 títulos", "16 títulos", "18 títulos"],
         correcta: "16 títulos"},
-      {pregunta: "¿Qué jugador legendario proveniente de este equipo posee muchos récords?",
+      {pregunta: "¿Qué jugador legendario proveniente del equipo de Diablos posee muchos récords?",
         opciones: ["Alfredo Ortiz", "Alonso Perry", "Ramón Montoya"],
         correcta: "Alfredo Ortiz"},
-      {pregunta: "¿Quién es el dueño del equipo que le da el nombre a su estadio actual?",
+      {pregunta: "¿Quién es el dueño del equipo de los Diablos que le da el nombre a su estadio actual?",
         opciones: ["Alfredo Harp Helú", "Miguel Ojeda", "Salomé Barojas"],
         correcta: "Alfredo Harp Helú"},
-      {pregunta: "¿Qué manager les ayudó a ganar su primer premio en 1965?",
+      {pregunta: "¿Qué manager les ayudó a ganar su primer premio en 1965 a los Diablos Rojos?",
         opciones: ["Lázaro Salazar", "Alfredo Ortiz", "Ty Gainey"],
         correcta: "Lázaro Salazar"}
     ]
@@ -249,19 +249,19 @@ const equipos = [
   {
     nombre: "El Águila de Veracruz", // - - - - - EL ÁGUILA DE VERACRUZ
     preguntas: [
-      {pregunta: "¿Qué empresario creó el equipo a base de su compañía petrolera?",
+      {pregunta: "¿Qué empresario creó el equipo del Aguila a base de su compañía petrolera?",
         opciones: ["Sir Weetman Pearson", "Alfredo Harp Helú", "Martín Dihigo"],
         correcta: "Sir Weetman Pearson"},
-      {pregunta: "¿Quién lanzó el primer sin hit-sin carrera de su historia?",
+      {pregunta: "¿Quién lanzó el primer sin hit-sin carrera de la historia del Aguila?",
         opciones: ["Martín Dihigo", "Humberto Sosa", "Al Pinkston"],
         correcta: "Martín Dihigo"},
-      {pregunta: "¿En qué año se obtuvieron más cuadrangulares?",
+      {pregunta: "¿En qué año se obtuvieron más cuadrangulares para El Aguila?",
         opciones: ["2001", "2005", "2010"],
         correcta: "2005"},
-      {pregunta: "¿En qué año se fundó el equipo?",
+      {pregunta: "¿En qué año se fundó el equipo del Aguila?",
         opciones: ["1920", "1925", "1930"],
         correcta: "1925"},
-      {pregunta: "¿En qué año regresaron al Estadio Beto Ávila?",
+      {pregunta: "¿En qué año regresaron El Aguila al Estadio Beto Ávila?",
         opciones: ["2019", "2021", "2023"],
         correcta: "2021"}
     ]
@@ -270,19 +270,19 @@ const equipos = [
   {
     nombre: "Guerreros de Oaxaca", // - - - - - GUERREROS DE OAXACA
     preguntas: [
-      {pregunta: "¿Qué jugador produjo el récord de carreras producidas en 1997?",
+      {pregunta: "¿Qué jugador produjo el récord de carreras producidas en 1997 para los Guerreros?",
         opciones: ["Nelson Barrera Romero", "Óscar Robles", "Carlos Rivera"],
         correcta: "Nelson Barrera Romero"},
-      {pregunta: "¿En qué año obtuvieron su único campeonato?",
+      {pregunta: "¿En qué año obtuvieron su único campeonato los Guerreros?",
         opciones: ["1996", "1998", "2000"],
         correcta: "1998"},
-      {pregunta: "¿Cuál de estos fue uno de sus jugadores destacados?",
+      {pregunta: "¿Cuál de estos fue uno de los jugadores destacados para los Guerreros?",
         opciones: ["Óscar Robles", "Erick Rodríguez", "Jaime Brena"],
         correcta: "Óscar Robles"},
-      {pregunta: "¿Quién propuso el nombre del equipo en un concurso?",
+      {pregunta: "¿Quién propuso el nombre del equipo de Los Guerrreros en un concurso?",
         opciones: ["Erasto Venegas", "Alfredo Ortiz", "Nelson Barrera Romero"],
         correcta: "Erasto Venegas"},
-      {pregunta: "¿Quién fue su primer manager?",
+      {pregunta: "¿Quién fue el primer manager de los Guerreros?",
         opciones: ["Alfredo “el Zurdo” Ortiz", "Óscar Robles", "Bárbaro Cañizares"],
         correcta: "Alfredo “el Zurdo” Ortiz"}
     ]
@@ -483,9 +483,14 @@ if (btnEmpezar) {
     tituloPregunta.textContent = p.pregunta; // Texto de la pregunta
 
     radios.forEach((radio, i) => {
-      document.getElementById(radio.id + "_text").textContent = opciones[i]; // Se busca el texto correspondiente
+      const bloque = radio.parentElement;
+      bloque.classList.remove("Correcta");
+      const label = document.getElementById(radio.id + "_text");
+      label.textContent = opciones[i]; // Se busca el texto correspondiente
       radio.value = opciones[i]; // Se asigna el valor
       radio.checked = false; // Desmarca todas las opciones
+      radio.disabled = false;
+      label.classList.remove("Correcta");
     });
   }
 
@@ -500,14 +505,24 @@ if (btnEmpezar) {
     if (seleccionada.value === ronda[preguntaActual - 1].correcta) { // Si la respuesta es correcta
       puntaje += PUNTOS_POR_PREGUNTA; // Se incrementa el puntaje
       spanScore.textContent = puntaje; // Se actualiza el texto del puntaje
+      
     }
+
+    radios.forEach((radio)=>{
+      const bloque = radio.parentElement;
+      if (radio.value === ronda[preguntaActual - 1].correcta){
+        bloque.classList.add("Correcta");
+      }
+      radio.disabled=true;
+    });
 
     preguntaActual++; // Siguiente pregunta
 
     if (preguntaActual <= ronda.length) { // Se comprueba que aún queden preguntas
-      cargarPregunta();
-    } else {
-      terminarRonda(false); // Es false porque solo es true si se acabó el tiempo
+      setTimeout(() => {cargarPregunta()}, 1000);
+      
+    } else { // Es false porque solo es true si se acabó el tiempo
+      setTimeout(() => {terminarRonda(false)}, 1000);
     }
   }
 
@@ -568,4 +583,82 @@ if (slides && slideElements.length && dots.length && nextButton && previousButto
       (imagenActual - 1 + slideElements.length) % slideElements.length
     );
   });
+}
+
+//EQUIPOS CARRUSEL
+if (document.getElementById("equipo-nombre")) {
+
+  const equiposInfo = [
+    {
+      nombre: "Diablos Rojos del México",
+      logo: "assets/logos/diablosrojos.png",
+      info: `
+        <p>Los Diablos Rojos, provenientes de la ciudad de México, son uno de los equipos más famosos, quienes actualmente cuentan con un alto porcentaje de victorias, siendo los líderes de la zona sur en el país.</p>
+
+        <h5>Pasado</h5>
+        <p>Fundados el 11 de febrero de 1940, por Salvador Lutteroth y Ernesto Carmona, Los Rojos de México (como se les conocía en sus inicios) arrancaron con fuerza al tener una rivalidad entretenida contra los extintos Azules de Veracruz; posterior a esto y gran parte de la década de los 40s quedaron relegados a segundo plano y tuvieron un paso desapercibido.</p>
+        <p>Fue durante sus primeros dos años que surge su apodo de los diablos con la frase “Estos rojos juegan como Diablos”, lo que posteriormente influenciaría el nombre del equipo. Es hasta mediados de la década de los 50 que los Diablos Rojos lograron sobresalir, en 1956 con el primer lugar de la temporada ganando su primer gallardete sobre los Tigres de Quintana Roo, y en 1957 y 1958 como subcampeón.</p>
+        <p>De ahí en adelante el equipo tendría distintas épocas, con rachas de victorias y campeonatos hasta años de decadencia, donde los capitalinos pasaron por distintos dueños.</p>
+        <p>Varios jugadores destacados son Alfredo “El zurdo” Ortiz usando el 15 en su camisa, Ramón “El Diablo” Montoya, Alonso Perry obteniendo una triple corona de bateo, Salomé Barojas quien fue nombrado mejor relevista del año dos veces, Ty Gainey obteniendo el porcentaje de slugging más alto en 1994 (El slugging refleja la cantidad de almohadillas que un pelotero alcanza en sus turnos debido a conexiones, dando mayor valor a extrabases como dobles, triples y jonrones), entre muchos otros.</p>
+
+        <h5>Actualidad</h5>
+        <p>Hoy en día Los Diablos Rojos los maneja Alfredo Harp Helú, quien los compró en 1994 y sigue siendo su presidente hoy en día. El estadio actual de los Diablos Rojos lleva su nombre.</p>
+        <p>Cuentan con 1 título de BCL Americas (Baseball Champions League Americas), 18 títulos de la Liga Mexicana de Baseball, y de títulos divisionales llevan la cuenta de 5 en Zona Norte, 3 en Zona centro y 14 en Zona Sur.</p>
+      `
+    },
+    { nombre: "Olmecas de Tabasco", logo: "assets/logos/olmecas.png", info: null },
+    { nombre: "Bravos de León",     logo: "assets/logos/bravos.png",  info: null }
+  ];
+
+  let equipoSel = 0;
+  const elNombre = document.getElementById("equipo-nombre");
+  const elActual = document.getElementById("logo-actual");
+  const elPrev   = document.getElementById("logo-prev");
+  const elNext   = document.getElementById("logo-next");
+  const elPuntos = document.getElementById("equipo-puntos");
+  const elInfo   = document.getElementById("equipo-info");
+
+  equiposInfo.forEach((_, i) => {
+    const punto = document.createElement("span");
+    punto.addEventListener("click", () => irAEquipo(i));
+    elPuntos.appendChild(punto);
+  });
+
+  function irAEquipo(i) {
+    const total = equiposInfo.length;
+    equipoSel = (i + total) % total; // navegacion circular
+    const eq   = equiposInfo[equipoSel];
+    const prev = equiposInfo[(equipoSel - 1 + total) % total];
+    const next = equiposInfo[(equipoSel + 1) % total];
+
+    elNombre.textContent = eq.nombre;
+    elActual.src = eq.logo;  elActual.alt = eq.nombre;
+    elPrev.src   = prev.logo; elPrev.alt  = prev.nombre;
+    elNext.src   = next.logo; elNext.alt  = next.nombre;
+
+    [...elPuntos.children].forEach((p, idx) =>
+      p.classList.toggle("activo", idx === equipoSel));
+
+    elInfo.innerHTML = `
+      <h4>${eq.nombre}</h4>
+      ${eq.info ? eq.info : "<p>Información próximamente.</p>"}
+      <img src="${eq.logo}" alt="${eq.nombre}">
+    `;
+  }
+
+  document.getElementById("equipo-prev").addEventListener("click", () => irAEquipo(equipoSel - 1));
+  document.getElementById("equipo-next").addEventListener("click", () => irAEquipo(equipoSel + 1));
+  elPrev.addEventListener("click", () => irAEquipo(equipoSel - 1));
+  elNext.addEventListener("click", () => irAEquipo(equipoSel + 1));
+
+  // Deslizar con el dedo para celular
+  let inicioX = 0;
+  const zonaSwipe = document.querySelector(".selector-logos");
+  zonaSwipe.addEventListener("touchstart", e => { inicioX = e.touches[0].clientX; });
+  zonaSwipe.addEventListener("touchend", e => {
+    const dx = e.changedTouches[0].clientX - inicioX;
+    if (Math.abs(dx) > 40) irAEquipo(equipoSel + (dx < 0 ? 1 : -1));
+  });
+
+  irAEquipo(0);
 }
