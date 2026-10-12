@@ -645,11 +645,25 @@ if (document.getElementById("equipo-nombre")) {
           <figcaption>Rocco, mascota de los Diablos Rojos del México</figcaption>
           </figure>
 
+      `
+    },
+    { 
+      nombre: "Olmecas de Tabasco", 
+      logo: "assets/logos/olmecas.png", 
+      info: `
+
+
 
       `
     },
-    { nombre: "Olmecas de Tabasco", logo: "assets/logos/olmecas.png", info: null },
-    { nombre: "Bravos de León",     logo: "assets/logos/bravos.png",  info: null }
+    { 
+      nombre: "Bravos de León", 
+      logo: "assets/logos/bravos.png", 
+      info: `
+
+      
+      `
+    }
   ];
 
   let equipoSel = 0;
