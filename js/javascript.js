@@ -189,7 +189,7 @@ const equipos = [
       {pregunta: "¿Cuál era el primer nombre de los Bravos?",
         opciones: ["Cachorros de León", "Leones de León", "Tigres de León"],
         correcta: "Cachorros de León"},
-      {pregunta: "¿Cuál de estos jugadores es un receptor de los Bravos?",
+      {pregunta: "¿Cuál de estos jugadores es un lanzador zurdo de los Bravos?",
         opciones: ["Ángel López", "Jaime Orozco", "Jack Pierce"],
         correcta: "Ángel López"},
       {pregunta: "¿Cuándo fue el primer campeonato de los Bravos?",
@@ -233,7 +233,7 @@ const equipos = [
         correcta: "1940"},
       {pregunta: "¿Cuántos títulos tienen los Diablos Rojos?",
         opciones: ["14 títulos", "16 títulos", "18 títulos"],
-        correcta: "16 títulos"},
+        correcta: "18 títulos"},
       {pregunta: "¿Qué jugador legendario proveniente del equipo de Diablos posee muchos récords?",
         opciones: ["Alfredo Ortiz", "Alonso Perry", "Ramón Montoya"],
         correcta: "Alfredo Ortiz"},
@@ -709,8 +709,57 @@ if (document.getElementById("equipo-nombre")) {
       nombre: "Bravos de León", 
       logo: "assets/logos/bravos.png", 
       info: `
+        <p>Los Bravos de León son uno de los varios equipos nacidos en León Guanajuato, contando con casi medio siglo de trayectoria, varios cambios de nombre y siendo representados de color rojo, azul y verde.</p>
 
-      
+          <figure class="equipo-foto">
+          <img src="assets/equipos/bravos-1.jpg" alt="Partido bravos">
+          <figcaption>Juego donde los Bravos vencieron 11-2 a los Guerreros</figcaption>
+          </figure>
+
+        <h5>Pasado</h5>
+        <h6>Los Cachorros de León</h6>
+        <p>Bajo el manto de Benjamín Valenzuela, los cachorros arrancaron su camino en 1979 con un camino lamentable en donde tuvieron un resultado de 52 victorias y 82 derrotas, siendo el peor equipo de la temporada. Es hasta el año siguiente que el equipo logra mejorar su calidad con el liderazgo de Mario Saldaña. No obstante, algo ocurriría en el beisbol mexicano que pausaría al equipo.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/bravos-2.jpg" alt="Alineación bravos">
+          <figcaption>Alineación de los Cachorros</figcaption>
+          </figure>
+
+        <h6>La huelga de 1980</h6>
+        <p>Llevada a cabo por la ANABE (Asociación Nacional de Beisbolistas), la huelga de 1980 cambió el rumbo de varios equipos de la liga mexicana de beisbol. Fue llevada a cabo por varios jugadores, quienes exigían un mejor trato salarial, contratos y prestaciones, y que, ante la ausencia de juegos en León, se hizo un campeonato desarrollado por la ANABE donde participó un equipo local llamado Lechugueros, sustituyendo por un tiempo a los Cachorros.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/bravos-3.jpg" alt="Huelga">
+          <figcaption>Periódico de la huelga de 1980</figcaption>
+          </figure>
+
+        <h6>Los Bravos</h6>
+        <p>Debido a lo inconsistente de la ANABE, en 1983 el empresario leonés Pedro Medina Hurtado compra a Los Broncos de Reynosa para trasladarlos a León, Guanajuato. En este año los renombran como Los Bravos. Es a partir de aquí que el equipo logra ascender y posicionarse en los marcadores.</p>
+        <p>En 1986 se destaca la participación de Jack Pierce, a pesar de que la campaña de ese año es la peor para los Bravos tanto en lo económico como en lo deportivo, Jack lograría romper un récord puesto por Héctor Espino, teniendo la mayor cantidad de jonrones en una temporada con 54, siendo el número de Héctor de 46. Dicho récord permanece intacto.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/bravos-5.jpg" alt="Jack Pierce">
+          <figcaption>Fotografía de Jack Pierce</figcaption>
+          </figure>
+
+        <p>El primer campeonato de los Bravos llegaría en 1990, luego de una temporada difícil ante rivales como Los Diablos Rojos o los Piratas de Campeche. La gran final se disputaría entre los Bravos y los Algodoneros de Unión Laguna, siendo estos últimos derrotados en un juego que quedó 4-1 a favor de los leoneses.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/bravos-4.jpg" alt="Bravos Campeones">
+          <figcaption>Celebración de los jugadores de los Bravos</figcaption>
+          </figure>
+
+        <p>Luego de esto, el equipo tuvo que mudarse a Veracruz debido a diferencias entre la directiva y las nuevas administraciones gubernamentales del estado, regresando a su hogar muchos años después en 2017.</p>
+
+        <h5>Actualidad</h5>
+        <p>Teniendo un paso breve a manos de Multimedios, quienes se hicieron con el equipo en 2018, en 2022 finalmente quedan en manos de empresarios leoneses en León, en busca de regresar a lo alto de los marcadores en las tablas de resultados.</p>
+        <p>Cuentan con el Estadio Domingo Santana como su casa desde el año 2017, con una capacidad de 6,500 personas. Cuentan con una mascota llamada BravoLeón, un león robusto y atrevido que pone a la afición de pie y prepara el terreno para los jugadores.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/bravos-6.jpg" alt="Bravoleon">
+          <figcaption>BravoLeón conviviendo con la fanaticada</figcaption>
+          </figure>
+
       `
     }
   ];
