@@ -595,15 +595,57 @@ if (document.getElementById("equipo-nombre")) {
       info: `
         <p>Los Diablos Rojos, provenientes de la ciudad de México, son uno de los equipos más famosos, quienes actualmente cuentan con un alto porcentaje de victorias, siendo los líderes de la zona sur en el país.</p>
 
+          <figure class="equipo-foto">
+          <img src="assets/equipos/diablosrojos-0.jpg" alt="Diablos Rojos campeones 2024">
+          <figcaption>Momento en el que Los Diablos Rojos consiguieron su título número 17</figcaption>
+          </figure>
+
         <h5>Pasado</h5>
         <p>Fundados el 11 de febrero de 1940, por Salvador Lutteroth y Ernesto Carmona, Los Rojos de México (como se les conocía en sus inicios) arrancaron con fuerza al tener una rivalidad entretenida contra los extintos Azules de Veracruz; posterior a esto y gran parte de la década de los 40s quedaron relegados a segundo plano y tuvieron un paso desapercibido.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/diablosrojos-3.jpg" alt="Diablos Rojos alineación">
+          <figcaption>Alineación antigua de los Rojos</figcaption>
+          </figure>
+
         <p>Fue durante sus primeros dos años que surge su apodo de los diablos con la frase “Estos rojos juegan como Diablos”, lo que posteriormente influenciaría el nombre del equipo. Es hasta mediados de la década de los 50 que los Diablos Rojos lograron sobresalir, en 1956 con el primer lugar de la temporada ganando su primer gallardete sobre los Tigres de Quintana Roo, y en 1957 y 1958 como subcampeón.</p>
         <p>De ahí en adelante el equipo tendría distintas épocas, con rachas de victorias y campeonatos hasta años de decadencia, donde los capitalinos pasaron por distintos dueños.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/diablosrojos-2.jpg" alt="Diablos Rojos alineación">
+          </figure>
+
         <p>Varios jugadores destacados son Alfredo “El zurdo” Ortiz usando el 15 en su camisa, Ramón “El Diablo” Montoya, Alonso Perry obteniendo una triple corona de bateo, Salomé Barojas quien fue nombrado mejor relevista del año dos veces, Ty Gainey obteniendo el porcentaje de slugging más alto en 1994 (El slugging refleja la cantidad de almohadillas que un pelotero alcanza en sus turnos debido a conexiones, dando mayor valor a extrabases como dobles, triples y jonrones), entre muchos otros.</p>
 
+        <h5>Estadios</h5>
+        <h6>Parque Delta</h6>
+        <p>El primer hogar del equipo fue el parque delta, lugar que compartieron con los Azules de Veracruz un tiempo y jugaron ahí desde 1940 hasta 1954.</p>
+
+        <h6>Parque del Seguro Social</h6>
+        <p>Es la casa donde jugaron más tiempo, desde 1955 hasta el año 2000. Aquí conseguirían 12 campeonatos, por lo que el recinto vio a los Diablos establecerse como verdaderos atletas de gran nivel. Al final hubo un juego de despedida entre los Tigres y los Diablos (porque compartían casa), juego que ganaron los rojos.</p>
+
+        <h6>Foro Sol</h6>
+        <p>Inaugurado en junio del 2000, fue casa de Tigres y Diablos hasta el 2002, cuando los Tigres se mudaron a su propio estadio. Lo que previamente fue conocido como un lugar para conciertos, fue el hogar de los beisbolistas hasta mediados de la década del 2010.</p>
+
+        <h6>Estadio Fray Nano</h6>
+        <p>Este estadio fue una casa provisional para el equipo, puesto a que el plan original era irse a un nuevo estadio que estaba en construcción, pero la demolición de los avances de dicho proyecto junto al regreso de la fórmula 1 a la ciudad de México obligó a los rojos a buscar un nuevo lugar, en lo que se construiría su actual estadio.</p>
+        
+          <figure class="equipo-foto">
+          <img src="assets/equipos/diablosrojos-5.jpg" alt="Primer estadio">
+          <figcaption>Parque Delta, primer hogar de los Rojos</figcaption>
+          </figure>
+
         <h5>Actualidad</h5>
-        <p>Hoy en día Los Diablos Rojos los maneja Alfredo Harp Helú, quien los compró en 1994 y sigue siendo su presidente hoy en día. El estadio actual de los Diablos Rojos lleva su nombre.</p>
+        <p>Hoy en día Los Diablos Rojos los maneja Alfredo Harp Helú, quien los compró en 1994 y sigue siendo su presidente hoy en día. El quinto estadio y actual hogar del equipo es el estadio que lleva el nombre de su presidente, Alfredo Harp Helú, el cual fue anunciado en el 2010, concretado en 2017 y terminado en el 2019.</p>
+        <p>Su actual mascota es un perro llamado Rocco, de personalidad ruda y fuerte, representando los valores de los Diablos con gran pasión.</P>
         <p>Cuentan con 1 título de BCL Americas (Baseball Champions League Americas), 18 títulos de la Liga Mexicana de Baseball, y de títulos divisionales llevan la cuenta de 5 en Zona Norte, 3 en Zona centro y 14 en Zona Sur.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/diablosrojos-6.jpg" alt="Mascota">
+          <figcaption>Rocco, mascota de los Diablos Rojos del México</figcaption>
+          </figure>
+
+
       `
     },
     { nombre: "Olmecas de Tabasco", logo: "assets/logos/olmecas.png", info: null },
@@ -642,7 +684,6 @@ if (document.getElementById("equipo-nombre")) {
     elInfo.innerHTML = `
       <h4>${eq.nombre}</h4>
       ${eq.info ? eq.info : "<p>Información próximamente.</p>"}
-      <img src="${eq.logo}" alt="${eq.nombre}">
     `;
   }
 

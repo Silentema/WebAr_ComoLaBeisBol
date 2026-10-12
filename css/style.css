@@ -643,15 +643,32 @@ button {
   color: var(--green);
 }
 
+.equipo-info h6 {
+  margin: 26px 0 8px;
+  padding-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
 .equipo-info p {
   margin: 0 0 14px;
   font-size: 1rem;
 }
 
-.equipo-info img {
+.equipo-foto {
+  margin: 20px 0 24px;      /* quita el margen por defecto de <figure> */
+}
+.equipo-foto img {
   display: block;
-  width: 60%;
-  max-width: 240px;
-  margin: 28px auto 0;
-  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.25));
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.equipo-foto figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  font-style: italic;
+  text-align: center;
+  color: #555;
 }
