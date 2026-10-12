@@ -651,9 +651,58 @@ if (document.getElementById("equipo-nombre")) {
       nombre: "Olmecas de Tabasco", 
       logo: "assets/logos/olmecas.png", 
       info: `
+        <p>Los olmecas, cuya sede es Villahermosa, Tabasco, son un equipo más reciente, llevando la segunda posición en cuanto a victorias se refiere para la zona sur de la Liga de Baseball Mexicana, detrás de los Diablos rojos.</p>
 
+          <figure class="equipo-foto">
+          <img src="assets/equipos/olmecas-1.jpg" alt="Partido olmecas">
+          <figcaption>Foto de 2021, luego de vencer 13-4 a los Diablos Rojos</figcaption>
+          </figure>
 
+        <h5>Pasado</h5>
+        <p>Los Olmecas han pasado por muchos cambios y muchos presidentes y dueños, y dichos cambios se ven reflejados en los varios nombres e identidades que ha tenido el equipo a lo largo de sus 51 años de historia.</p>
 
+        <h6>Los Cardenales</h6>
+        <p>Fue el primer nombre con el que se les conoció, teniendo un paso regular, pero teniendo una primera decepción en lo administrativo, pues el equipo tuvo un intento de adquirir a Los Leones de Yucatán. Luego de esto, el equipo tuvo que emigrar de la entidad para regresar a Tabasco en 1977.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/olmecas-2.jpg" alt="Cardenales">
+          <figcaption>Alineación de los Cardenales de Tabasco</figcaption>
+          </figure>
+
+        <h6>Los Plataneros</h6>
+        <p>Es en este año en el que hay una gran reorganización del equipo, cambiando de imagen y nombre, volviendo al lugar donde nacieron debido a la adquisición de Los Broncos de Reynosa. En 1979 tuvieron un año destacado, entrando por primera vez a la postemporada y dejando fuera a los Diablos Rojos, bajo la dirección de Raúl Cano, sin embargo, luego de este momento de emoción vinieron años de decepciones y malos resultados, dando como resultado que el entonces presidente Julián Manzur decidiera deshacerse de la franquicia en 1984.</p>
+          
+          <figure class="equipo-foto">
+          <img src="assets/equipos/olmecas-3.jpg" alt="Plataneros">
+          <figcaption>Alineación de los Plataneros de Tabasco</figcaption>
+          </figure>
+
+        <h6>Los Ganaderos</h6>
+        <p>El equipo fue salvador por el ganadero Humberto Tapia Córdoba, quien rescata a la tribuna de desaparecer y los renombra como los Ganaderos de tabasco. Bajo esta nueva dirección el equipo logró mejorar sus resultados, y a pesar de no estar entre los mejores, demostró por qué merecía seguir existiendo como un duro rival para el resto de los competidores.</p>
+        <p>Junto al ascenso del equipo en los marcadores, vino la confianza de los jugadores y los aficionados. Fue durante esta época que llegaron varios jugadores extranjeros como Steve Howie o Mike Cole.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/olmecas-4.jpg" alt="Ganaderos">
+          <figcaption>Alineación de los Ganaderos de Tabasco</figcaption>
+          </figure>
+
+        <h6>Los Olmecas</h6>
+        <p>En 1990 sufrieron un nuevo cambio de dueño, pasando a manos de Diego Rosique Palavicini y Carlos Elías Dagdug, provocando que cambiaran de identidad una vez más a la que ahora conocemos como Olmecas. A pesar del cambio de imagen y dirección, el equipo siguió igual en calidad dentro del juego. Es hasta 1993 donde logran por primera vez en la historia ser campeones, luego de 11 juegos ganados consecutivos, derrotando a los Tecolotes de Dos Laredos en la gran final. Tras esta importante victoria Los Olmecas lograrían establecerse como dignos rivales en los encuentros.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/olmecas-5.jpg" alt="Olmecas">
+          <figcaption>Alineación de los Olmecas de Tabasco</figcaption>
+          </figure>
+
+        <h5>Actualidad</h5>
+        <p>Hoy en día, los apodados Cabezones siguen deseando ser campeones una vez más, pues han demostrado ser dignos del estrellado, y que con un golpe bien acertado podrían consolidarse como de los mejores en el país.</p>
+        <p>El hogar actual de los Olmecas es el Parque Centenario 27 de febrero, el cual ha sido su casa desde que surgió el equipo, pues fue construido en 1964 y remodelado por fechas de 2021. La mascota actual es El Pochi, una tortuga alegre y fuerte que mantiene el espíritu de grandeza del equipo.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/olmecas-6.jpg" alt="Pochi">
+          <figcaption>El Pochi en el estadio de Los Cabezones</figcaption>
+          </figure>
+          
       `
     },
     { 
