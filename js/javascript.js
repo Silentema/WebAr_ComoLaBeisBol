@@ -761,6 +761,88 @@ if (document.getElementById("equipo-nombre")) {
           </figure>
 
       `
+    },
+    {
+      nombre: "Piratas de Campeche", 
+      logo: "assets/logos/piratas.png", 
+      info: `
+        <p>Siendo un equipo con mucho carisma y personalidad, los Piratas provenientes de Campeche, Campeche, son el equipo que ocupa el tercer lugar en los marcadores por porcentaje de victorias en la división sur. Con una identidad que representa su lugar de origen, los piratas abrazan su cultura, sus murallas, sus puertos, su historia y su arquitectura, además de un icónico cañonazo como sonido de celebración, para crear un conjunto entrañable.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/piratas-1.jpg" alt="Piratas">
+          <figcaption>Victoria de Los Piratas sobre Caliente de Durango</figcaption>
+          </figure>
+
+        <h5>Pasado</h5>
+        <p>El quipo nace con la adquisición de Los Alacranes de Durango, quienes no pudieron acabar la temporada debido a la huelga de 1980. Finalmente, en 1981, con su nuevo nombre “Los Piratas” empezarían a jugar teniendo un destacable primer paso dentro de la liga, quedando cercas del oro.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/piratas-3.jpg" alt="Debut">
+          <figcaption>Debut de Los Piratas de Campeche</figcaption>
+          </figure>
+
+        <h6>Primer Título</h6>
+        <p>No fue hasta 1983 que los Los Filibusteros, bajo el liderazgo de Francisco “Paquín” Estrada, en La Serie Final que se llevó a cabo entre los ganadores de cada zona, los Indios de Ciudad Juárez serían los rivales al ganar la zona norte.</p>
+        <p>De ahí en adelante estuvieron cercas de llegar a la final, en ocasiones quedando segundos en la zona sur, siempre buscando repetir la hazaña que los posicionó como uno de los grandes.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/piratas-2.jpg" alt="titulo">
+          <figcaption>Alineación de 1983, año del primer campeonato</figcaption>
+          </figure>
+
+        <h6>Años siguientes y Segundo Título</h6>
+        <p>Esto último se repetiría mucho, pues en el lapso del 2000 al 2009, los piratas se convirtieron en un equipo protagonista al clasificar en 6 de las 10 temporadas. Dentro de este tiempo lograría conseguir su segundo título en la historia en el 2004, siendo liderados nuevamente por Francisco Estrada. En 2005, 2008 y 2009 estuvieron cercas pero fueron derrotados por Los Olmecas, Los Diablos Rojos y los Tigres respectivamente.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/piratas-4.jpg" alt="segundo titulo">
+          <figcaption>Celebración del segundo título</figcaption>
+          </figure>
+
+        <h5>Actualidad</h5>
+        <p>Los Piratas siguen compitiendo en Campeche, en el estadio Estadio Nelson Barrera Romellón (con capacidad de 6,000 asistentes), buscando ese ansiado tercer título, acompañados de Lorenzillo, la mascota del equipo y quien logra encapsular el espíritu ganador y aventurero de Los Bombarderos del Golfo.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/piratas-5.jpg" alt="Lorenzillo">
+          <figcaption>Lorenzillo, mascota de Los Piratas</figcaption>
+          </figure>
+
+      `
+    },
+    {
+      nombre: "Pericos de Puebla", 
+      logo: "assets/logos/pericos.png", 
+      info: `
+      `
+    },
+    {
+      nombre: "Guerreros de Oaxaca", 
+      logo: "assets/logos/guerreros.png", 
+      info: `
+      `
+    },
+    {
+      nombre: "El Águila de Veracruz", 
+      logo: "assets/logos/aguila.png", 
+      info: `
+      `
+    },
+    {
+      nombre: "Tigres de Quintana Roo", 
+      logo: "assets/logos/tigres.png", 
+      info: `
+      `
+    },
+    {
+      nombre: "Conspiradores de Querétaro", 
+      logo: "assets/logos/conspiradores.png", 
+      info: `
+      `
+    },
+    {
+      nombre: "Leones de Yucatán", 
+      logo: "assets/logos/leones.png", 
+      info: `
+      `
     }
   ];
 
