@@ -921,12 +921,111 @@ if (document.getElementById("equipo-nombre")) {
       nombre: "El Águila de Veracruz", 
       logo: "assets/logos/aguila.png", 
       info: `
+        <p>El Águila de Veracruz es uno de los equipos más longevos de la liga, contando con más de 120 años de trayectoria, con varios en donde estuvieron ausentes y otros donde se consolidaron como los mejores del país.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/aguila-1.jpg" alt="Celebracion">
+          <figcaption>Juego donde el Águila fueron campeones</figcaption>
+          </figure>     
+
+        <h5>Pasado</h5>
+        <p>El béisbol en Veracruz se vio impulsado por empresas petroleras estadounidenses asentadas en la ciudad a principios del siglo XX, promoviendo este deporte y causando la creación de distintos equipos en el estado.</p>
+        <p>Una empresa petrolera de nombre Águila, cuyo dueño era Sir Weetman Pearson, tuvo interés de promover el deporte en el puerto, naciendo oficialmente los Rojos del Águila de Veracruz, en septiembre de 1903. Enfrentándose a los Indios de Juárez, ahí inicia la historia del equipo más tradicional y antiguo de México.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/aguila-2.jpg" alt="Fundador">
+          <figcaption>Sir Weetman Pearson</figcaption>
+          </figure> 
+
+        <p>No hay demasiado registro de sus primeras décadas, teniendo un paso tranquilo por esos años hasta que en 1937 logran conquistar un primer campeonato, bajo el mando del cubano Agustín Verde, en un campeonato oficial e inaugural de la LMB (Liga Mexicana de Béisbol).</p>
+          
+          <figure class="equipo-foto">
+          <img src="assets/equipos/aguila-3.jpg" alt="Alineacion">
+          <figcaption>Alineación Antigua de El Águila</figcaption>
+          </figure> 
+
+        <p>El águila fue campeón gracias a la participación de Martín Dihigo, quien tuvo una trayectoria espectacular antes de llegar a Veracruz, en donde crearía un récord en 1938 (mismo año donde conseguirían su segundo título) del mayor número de bateadores ponchados para un juego de 9 entradas de la Liga en el parque Alijadores al lograr 18 de los 27 outs de aquel memorable juego por la vía del ponche. Mientras su equipo obtenía su primer título, Dihigo era nombrado maestro y obtuvo la Triple Corona de Pitcheo.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/aguila-7.jpg" alt="Martín Dihigo">
+          <figcaption>Martín Dihigo</figcaption>
+          </figure> 
+        
+        <p>Varios años después, en 1952, el conjunto veracruzano logra regresar a la mirada de todos al conseguir un tercer título, bajo el liderazgo del mánager y jugador cubano Santos “El Canguro” Amaro, quien condujo al equipo a la victoria junto a una alineación con caras nuevas.</p>
+          <figure class="equipo-foto">
+          <img src="assets/equipos/aguila-4.jpg" alt="Alineacion">
+          </figure> 
+        <p>Pasados 9 años desde esa victoria, los Rojos del Águila tocan la gloria una vez más en 1961, demostrando que son capaces de reinventarse para sobreponerse a los demás. Así siguieron sus éxitos hasta 1970, año donde conseguirían ese ansiado quinto campeonato, en donde acabaría su suerte pues pasarían lo que queda del siglo fallando en el intento de ganar esa sexta.</p>
+
+        <h6>Sexto Título</h6>
+        <p>Tras 42 años de sequía, y llegando de un buen paso en 2011, en el 2012 finalmente lograrían traerle alegría a la gente de Veracruz, pues los llamados ahora Águila de Veracruz estarían una vez más en la cima consiguiendo un campeonato nuevo. Los años previos a esta victoria, el equipo pasaba por malas rachas, destacando como dato curioso el 2010 como el año con más cuadrangulares para el equipo.</p>
+          
+          <figure class="equipo-foto">
+          <img src="assets/equipos/aguila-6.jpg" alt="Campeones 2012">
+          <figcaption>Celebración del título del 2012</figcaption>
+          </figure> 
+        
+        <h5>Actualidad</h5>
+        <p>Tras ausentarse desde el 2017 hasta su regreso en el 2020, El Águila de Veracruz vuelve a su casa en el Parque Deportivo Universitario “Beto Ávila” en 2021 para seguir demostrando su importancia en la historia del deporte en el estado y el país entero, acompañados de Pachi Aguilar, mascota del equipo.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/aguila-5.jpg" alt="Pachi Aguilar">
+          <figcaption>Pachi Aguilar, mascota del equipo</figcaption>
+          </figure> 
+
       `
     },
     {
       nombre: "Tigres de Quintana Roo", 
       logo: "assets/logos/tigres.png", 
       info: `
+        <p>Los Tigres aparecen por primera vez en la Ciudad de México en abril de 1955, bajo el nombre de Tigres Capitalinos, permaneciendo en la capital por 46 años hasta que, en el 2002, usando el nombre de Tigres de la Angelópolis, se mudarían a puebla. Finalmente llegan a Cancún, Quintana Roo en el año 2007, donde obtienen su nombre actual.</p>
+          
+          <figure class="equipo-foto">
+          <img src="assets/equipos/tigres-1.jpg" alt="Festejo del equipo">
+          <figcaption>Festejo del equipo</figcaption>
+          </figure> 
+        
+        <h5>Pasado</h5>
+        <p>Fundados por el Ingeniero Alejo Peralta y Díaz Ceballos en 1955, gracias a su interés al deporte, siendo el principal accionista de los Tigres Capitalinos. Teniendo de mánager a George Genovese, el conjunto felino llegó desde la última posición hasta la cima para conquistar el campeonato en su primer año jugando. Con un estadio lleno de aficionados, el triunfo les otorgó el lema “El Equipo que nació campeón”.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/tigres-2.jpg" alt="Festejo del equipo">
+          <figcaption>El equipo que nació campeón</figcaption>
+          </figure> 
+
+        <h6>Primeros Títulos</h6>
+        <p>Los títulos no se harían esperar, pues cinco años después tocarían la cima una vez más bajo el liderazgo de Guillermo “Memo” Garibay, consiguiendo su segundo título luego de varias temporadas en los últimos puestos tras derrotar a los Sultanes de Monterrey. Teniendo el apoyo del mexicano Beto Ávila, un grandioso jugador que anunció su retiro cuatro días después de conseguir el título.</p>
+        <p>Como si fuera una costumbre, luego de cinco años en 1965 obtendrían un tercer título, uno especial pues los fanáticos lo recuerdan con cariño, asegurando que se trató de una serie de juegos emotivos y dramáticos. Rompiendo la racha de cada 5 años, al año siguiente lograrían repetir su hazaña al conseguir un cuarto título, con Ricardo Garza como mánager, ante cambios en el sistema de la competencia los Tigres se antepondrían a todo llegando a la final contra los Diablos Rojos, ganando la serie 4 a 2.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/tigres-3.jpg" alt="Juego de los tigres">
+          <figcaption>Juego de los Tigres Capitalinos</figcaption>
+          </figure> 
+
+        <h6>Años Noventa</h6>
+        <p>En esta década obtendrían dos títulos nuevos. El primero en 1992 acabando con 26 años de sequía desde el último título y trayendo nueva vitalidad al equipo. El segundo vendría en 1997, con una carrera que haría de los Tigres el equipo más dominador de los últimos 10 años, acabando una vez más con los Diablos Rojos en la final.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/tigres-4.jpg" alt="Juego de los años noventa">
+          </figure> 
+        
+        <h6>Proximos Títulos</h6>
+        <p>Para la fortuna de la afición y los jugadores, la sequía no se repitió, pues el nuevo milenio estuvo lleno de nuevos títulos, en el 2000, 2001, 2005, 2011, 2013, 2015, mostrándole a todo el país que son uno de los equipos más grandes de la liga.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/tigres-5.jpg" alt="Título del 2011">
+          <figcaption>Victoria del título del 2011</figcaption>
+          </figure> 
+
+        <h5>Actualidad</h5>
+        <p>Con un total de 12 títulos de Liga, los Tigres de Quintana Roo son sinónimo de calidad. A pesar de hoy en día no contar con los mejores marcadores, la afición está a la espera de que los felinos se levanten una vez más por ese decimotercer título. El equipo cuenta con el estadio Beto Ávila en Cancún y como mascota a Chacho, un tigre adorable y de espíritu alegre.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/tigres-6.jpg" alt="Mascota del equipo">
+          <figcaption>Chacho, mascota del equipo</figcaption>
+          </figure> 
+
       `
     },
     {
