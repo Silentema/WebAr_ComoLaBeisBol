@@ -812,12 +812,109 @@ if (document.getElementById("equipo-nombre")) {
       nombre: "Pericos de Puebla", 
       logo: "assets/logos/pericos.png", 
       info: `
+        <p>Los Pericos son un equipo que, como su nombre lo indica, son originarios de Puebla, siendo una de las agrupaciones más antiguas y con más historia del país, con partidos y juegos que datan de los cuarenta.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/pericos-1.jpg" alt="Pericos">
+          <figcaption>Pericos campeones en la temporada 2023</figcaption>
+          </figure>
+
+        <h5>Pasado</h5>
+        <p>En la década de los años veinte ocurren los precedentes para la posterior fundación oficial de los pericos, pues desde 1925 que hay registro del 74 Regimiento de Puebla, el antecesor de los Pericos. Luego, en 1938 con el nombre de Hudson Puebla, de 1939 a 1941 como Chevrolet de Puebla, hasta 1942 donde se establecen de forma más oficial, simplemente conocidos como Puebla.</p>
+        <p>Todo surgió debido a la situación militar y social del estado a principios del siglo, pues una falta de armamento y de soldados provocó que llegaran del norte mucho equipo nuevo, y entre toda la reestructuración se trajeron el béisbol como influencia de la frontera con estados unidos. Por eso empiezan a jugar con grupos no formalmente estructurados hasta que se arma un equipo para la liga mexicana de béisbol.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/pericos-2.jpg" alt="Agrupacion antigua">
+          <figcaption>Una de las Primeras alineaciones del equipo poblano</figcaption>
+          </figure>
+
+        <p>La razón del nombre Chevrolet proviene del patrocinio de la marca, la cual termina y provoca el cambio de imagen y nombre. Como el uniforme del equipo era de color verde y el parque de béisbol eran de color verde con blanco, a los jugadores les empezaron a llamar con gritos durante los juegos "vamos verdes, vamos pericos", a partir de 1945.</p>
+
+        <h6>Pericos</h6>
+        <p>Luego de quedarse cercas del campeonato, durante toda la década de los 50s los ahora llamados Pericos estuvieron intentando conseguir el oro hasta 1959, donde celebraron la victoria del título en La Liga Invernal Veracruzana.</p>
+        <p>Un año después volverían a la Liga Mexicana de Béisbol luego de una ausencia de varios años, en donde entraron con todo, obteniendo el título en 1963 derrotando a los Diablos Rojos del México y sacando buenos números en los marcadores en los años siguientes. Lamentablemente, en 1969 el béisbol se iría del estado cuando se mudan a Mérida, Yucatán.</p>
+
+        <h6>Ángeles de Puebla</h6>
+        
+          <figure class="equipo-foto">
+          <img src="assets/equipos/pericos-3.jpg" alt="Partido de los angeles">
+          <figcaption>Partido de los Ángeles de Puebla</figcaption>
+          </figure>
+
+        <p>Volviendo en 1973, los ahora llamados Ángeles llegaron a un nuevo estadio con nueva identidad y buscando una vez más el título. Desafortunadamente para ellos, esto no llegaría hasta el final de la década, pues el resto de los años sufrieron de cambios de dueños junto a varias derrotas.</p>
+        <p>En 1979 llega el tan ansiado segundo título, derrotando en la final de la zona sur a los Cafeteros de Córdova, para verse las caras con los Indios de ciudad Juarez, en donde saldrían victoriosos.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/pericos-5.jpg" alt="Agrupación de los angeles">
+          <figcaption>Alineación de los Ángeles de Puebla</figcaption>
+          </figure>    
+          
+        <h6>Ángeles Negros de Puebla</h6>
+        <p>Tras la huelga de 1980 y una breve ausencia de 5 años, en 1985 regresan a Puebla los Ángeles, ahora con el nuevo nombre de Negros, quienes nada más llegar obtendrían un nuevo título al año siguiente, derrotando a los Tigres de Quintana Roo en la zona sur, y en la gran final a los Sultanes de Monterrey.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/pericos-4.jpg" alt="Agrupación de los angeles negros">
+          <figcaption>Alineación de los Ángeles Negros de Puebla</figcaption>
+          </figure>            
+
+        <h6>Nuevamente Pericos</h6>
+        <p>En 1993, tras adquirir la franquicia de los Cafeteros de Córdova, volvieron a su nombre de Los Pericos. Pasaron los años y el equipo pasó más desapercibido tras varios intentos y derrotas.</p>
+        <p>En el 2016 capturaron un cuarto título al vencer a los Toros de Tijuana, Los Leones de Yucatán y los Tigres de Quintana Roo.</p>
+
+        <h5>Actualidad</h5>
+        <p>Recientemente los Pericos obtuvieron su quinto título en la liga, cuando vencieron a los Algodoneros de la Unión Laguna en 2023, bajo el mando de Sergio Omar Gastélum, estableciéndose, así como uno de los grandes en la zona sur. Los Poblanos tienen de mascota a Pepe Perico, y su casa siendo el Estadio Hermanos Serdán desde su inauguración.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/pericos-6.jpg" alt="Pepe Perico">
+          <figcaption>Pepe Perico en el Estadio Hermanos Serdán</figcaption>
+          </figure>    
+
       `
     },
     {
       nombre: "Guerreros de Oaxaca", 
       logo: "assets/logos/guerreros.png", 
       info: `
+        <p>Los Guerreros de Oaxaca son un equipo joven en comparación a sus rivales de la zona sur, naciendo en la década de los 90s, sin embargo, cuentan con una historia interesante en su surgimiento y un hambre intenso de comerse al mundo con su calidad de juego.</p>
+          
+          <figure class="equipo-foto">
+          <img src="assets/equipos/guerreros-1.jpg" alt="Guerreros 2026">
+          <figcaption>Oaxaca toma ventaja en la serie ante los Diablos Rojos</figcaption>
+          </figure> 
+         
+        <h5>Pasado</h5>
+        <p>Todo empezó cuando en 1995, luego de que se hiciera saber a varios empresarios que el equipo de los Charros de Jalisco estaban en venta debido a malos números, por lo que el empresarios Alfredo Harp Herú (dueño de los Diablos Rojos del México), Roberto Mansur, José Marrón, Carlos Helú, así como el expresidente de la Liga: Treto Cisneros deciden crear un nuevo equipo en Oaxaca con el nombre de Guerreros. Dicho nombre fue elegido en una convocatoria para encontrarle nombre a los oaxaqueños, donde el exjugador Erasto Venegas ganó y eligió un nombre poderoso.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/guerreros-2.jpg" alt="Alfredo Harp Herú 2026">
+          <figcaption>Alfredo Harp Herú</figcaption>
+          </figure> 
+
+        <p>Arrancaron con Alfredo “El zurdo” Ortiz como mánager debido a su trayectoria de lanzador y timonel, en donde se establecerían rápidamente como una amenaza para el resto de los competidores. El día 14 de marzo, un día después de haber visitado a los Potros de Minatitlán, el conjunto salto al Diamante a su primer encuentro en casa, como Guerreros de Oaxaca.</p>
+        <p>En 1997, bajo el liderazgo del venezolano Leonel Carreón, lograron números que, aunque no los mejores, fueron superiores a su año de debut, avanzando poco a poco en los marcadores. Además, este año el jugador Nelson Barrera establecería un récord en carreras impulsadas, rompiendo el previamente establecido por “Superman” Héctor Espino, acabando Barrera con 1639 carreras, en una hazaña que se mantiene.</p>
+        <p>En el tercer año de los Guerreros, bajo la nueva administración de la presidencia del club, entran nuevos jugadores provenientes de otros equipos, los cuales le da un aire nuevo al conjunto; ejemplo, llega Homar Rojas, cátcher de los Leones de Yucatán, marcando una diferencia en las jugadas. Junto a la reorganización, se nombra a Nelson Barrera como el nuevo mánager, quien dirigiría y jugaría a la vez.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/guerreros-3.jpg" alt="Celebracion">
+          <figcaption>Celebración de los Guerreros</figcaption>
+          </figure> 
+
+        <p>Gracias a estos cambios, el equipo oaxaqueño lograría conquistar su único en apenas su tercera temporada de juego. Dejando fuera a los Sultanes y los Diablos, Los Guerreros se verían las caras con los Acereros de Monclova, quienes habían eliminado a otros grandes como a los Langosteros de Cancún y a los Tigres, venciéndolos en el proceso y llevándose la victoria.</p>
+        <p>Después de esta victoria, vendría un año difícil, pues en 1999, pues en la Ciudad de Oaxaca sería sede del Juego de estrellas de la LMB, cosa que fuera de alegrar a los guerreros, causaría varios problemas que terminarían por hacer de ese año uno mediocre. Desde cambios de jugadores, hasta lesiones de jugadores nada más empezando la temporada, la caída del conjunto terminó pasando.</p>
+        <p>Del 2000 en adelante, se mantuvieron muy discretos, teniendo temporadas buenas, pero sin llegar a concretar el segundo título. Cosas destacables de estos años pueden ser la lamentable lesión de Nelson Barrera, quien se fracturó 3 costillas al recibir un pelotazo, lo que lo dejaría fuera por 27 juegos; también la participación de Oscar Robles, quien sería un jugador que resaltaría en la década de los 2010s debido al paso desapercibido del equipo.</p>
+        
+          <figure class="equipo-foto">
+          <img src="assets/equipos/guerreros-4.jpg" alt="Nelson Barrera">
+          <figcaption>Nelson Barrera, exjugador y mánager de los Guerreros</figcaption>
+          </figure> 
+
+        <h5>Actualidad</h5>
+        <p>Hoy los Guerreros buscan conquistar un nuevo título, manteniéndose a raya en las tablas de posiciones como un equipo que tiene el potencial de ser más grande. Actualmente juegan en el Estadio Yu’Va, cuya construcción concluyó apenas este año, siendo inaugurado la noche del viernes 22 de mayo de 2026. Junto a su nueva casa, está su mascota Tato, una ¿ave roja? Que alegra a los aficionados durante los encuentros con sus pasos de baile y su personalidad encantadora.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/guerreros-5.jpg" alt="Tato">
+          <figcaption>Tato junto a los Guerreros</figcaption>
+          </figure> 
       `
     },
     {
