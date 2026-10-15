@@ -1032,12 +1032,96 @@ if (document.getElementById("equipo-nombre")) {
       nombre: "Conspiradores de Querétaro", 
       logo: "assets/logos/conspiradores.png", 
       info: `
+        <p>Siendo el equipo más reciente de la zona sur, Los Conspiradores son fundados en el 2022 con sede en Huimilpan, justo en la zona Metropolitana de Querétaro.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/conspiradores-1.jpg" alt="Introducción al equipo">
+          <figcaption>Conspiradores en el 2024</figcaption>
+          </figure> 
+
+        <h5>Pasado</h5>
+        <p>A pesar de que Querétaro cuenta con un club de Fútbol, baloncesto y fútbol americano, no contaban con un equipo de béisbol profesional, por lo que a finales de 2022 se hace oficial la presentación de los Conspiradores.</p>
+        <p>Vistiendo de blanco, negro y morado, el conjunto debutó en la temporada de 2024 luego de que se construyera un estadio específico para ellos. En su juego de debut vencieron a los Tigres de Quintana Roo con un encuentro que quedó 6 – 1. Acabaron el año con 50 victorias y 38 derrotas, siendo un gran comienzo para el equipo.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/conspiradores-2.jpg" alt="IDebut">
+          <figcaption>Debut del Conjunto</figcaption>
+          </figure> 
+
+        <p>Aunque la historia del equipo es corta, tienen la historia del estado completo muy arraigada a su identidad, pues el nombre de Los Conspiradores proviene de la Conspiración de Querétaro, movimiento que se dio en 1810 y que sería un parteaguas para el inicio de la Guerra de Independencia de México.</p>
+          <figure class="equipo-foto">
+          <img src="assets/equipos/conspiradores-3.jpg" alt="Conspiración de queretaro">
+          <figcaption>Conspiración de Querétaro</figcaption>
+          </figure>
+
+        <h5>Actualidad</h5>
+        <p>Con un estadio en construcción, los Conspiradores batallan por subir más en los marcadores, y aún sin un título en sus manos, tienen un gran trabajo por delante para demostrar que en Querétaro también hay cátedra en el béisbol.</p>
+          
+          <figure class="equipo-foto">
+          <img src="assets/equipos/conspiradores-4.jpg" alt="Mascota del equipo">
+          <figcaption>Nacho, mascota del equipo</figcaption>
+          </figure>
       `
     },
     {
       nombre: "Leones de Yucatán", 
       logo: "assets/logos/leones.png", 
       info: `
+        <p>Teniendo su sede en Mérida, Yucatán, Los Leones representan la fuerza y el espíritu deportivo de los yucatecos en el béisbol.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/leones-1.jpg" alt="celebracion">
+          <figcaption>Celebración del título de la temporada 2022</figcaption>
+          </figure>
+        
+        <h5>Pasado</h5>
+        <p>El nombre de Leones proviene de una cervecería, debido a que se construyó un estadio cercas de esta, la cual contaba con un producto popular siendo “León Negra”. Este factor, sumado a que el escudo de armas de la ciudad tiene a un león en él, se decidió que tendrían a este famoso felino como identidad.</p>
+        <p>Finalmente debutan en 1954, jugando su juego debut contra los Tecolotes de Nuevo Lared ganando 8 – 0 en el marcador.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/leones-2.jpg" alt="Periodico">
+          <figcaption>Periódico del debut de los Leones</figcaption>
+          </figure>
+
+        <h6>Primer Título</h6>
+        <p>El equipo no tardó en encontrar el oro, pues tres años de su debut conseguirían su primer campeonato, guiados por el mánager Oscar “Barriguilla” Rodríguez y contando con jugadores excepcionales.</p>
+        <p>Luego de varios años, los Yucatecos se mudaron de sede hasta que volvieron en 1970 para formar parte de la recién creada Zona Sur, con muchos espectadores que querían ser testigos del regreso de los Leones a la Liga. Aunque su estancia no duró mucho, una vez más se retiraron para posteriormente regresar en 1979, solo que esta vez ya no se irían a ningún lado.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/leones-3.jpg" alt="Alineación">
+          <figcaption>Alineación de los Leones</figcaption>
+          </figure>
+
+        <h6>Segundo Título</h6>
+        <p>En 1984, luego de exitosamente eliminar a Los Diablos Rojos del México y a los Tigres Capitalinos, se coronarían al conseguir el triunfo sobre los Indios de Ciudad Juarez, en el sexto partido de la serie final.</p>
+
+        <h6>Tercer Título</h6>
+        <p>Dirigidos por el boricua Lino Rivera, los llamados melenudos entraron en la postemporada de 2006, dejando atrás nuevamente a los Tigres y los Diablos, llegando esta vez a la final contra los Sultanes de Monterrey, obteniendo la victoria en la entrada catorce del quinto juego.</p>
+
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/leones-4.jpg" alt="Victoria">
+          <figcaption>Victoria del equipo en el 2006</figcaption>
+          </figure>     
+          
+        <h6>Cuarto Título</h6>
+        <p>Bajo el liderazgo de Roberto “Chapo” Vizcarra, en 2018 consiguen su cuarto título de liga alzando la copa Zaachila, derrotando nuevamente a Los Sultanes en la Serie del Rey (serie actual de campeonato de la liga), siendo el primer equipo en ganar cuatro juegos como local.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/leones-5.jpg" alt="Victoria">
+          <figcaption>Celebración del título de 2018</figcaption>
+          </figure> 
+          
+        <h6>Quinto Título</h6>
+        <p>Su última conquista se da en 2022 venciendo en la Zona Sur a los Tigres, los Pericos y los Diablos Rojos, viajando a la capital por el campeonato que ya les pertenecía. Una vez más logran darle vuelta a una serie que favorecía a Los sultanes, teniendo una ventaja en el juego seis y siete para finalmente coronarse como campeones.</p>
+
+        <h5>Actualidad</h5>
+        <p>Aún con su historial de victorias, los leones se encuentran en la última posición de la zona sur en la temporada actual, mostrando que hay altos y bajos pero que nunca se rinden ante el deseo de ser más grandes que lo que fueron ayer. Su estadio actual es el Parque Kukulcán Alamo, también apodado como “la cueva”, con una capacidad de 14,917 personas. La mascota del conjunto se trata de Leonel “el coronel”, un melenudo león caricaturesco que trae ánimos en las buenas y en las malas.</p>
+
+          <figure class="equipo-foto">
+          <img src="assets/equipos/leones-6.jpg" alt="Leonel">
+          <figcaption>Leonel "El coronel", mascota del equipo</figcaption>
+          </figure> 
       `
     }
   ];
