@@ -5,9 +5,137 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.5.0/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      #view-model-button {
+        position: fixed;
+        z-index: 10;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 20px;
+        border: 0;
+        border-radius: 8px;
+        background: #1f534e;
+        color: #fff;
+        font: 600 16px Arial, sans-serif;
+        cursor: pointer;
+      }
+
+      #view-model-button:disabled {
+        background: #777;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+
+      #model-viewer {
+        position: fixed;
+        z-index: 30;
+        inset: 0;
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background-color: #f4f4f4;
+      }
+
+      #model-viewer[hidden] {
+        display: none;
+      }
+
+      #prize-transition {
+        position: fixed;
+        z-index: 40;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: radial-gradient(circle, #ffffff 0%, #e6e4e4 45%, #000000 100%);
+        animation: prize-background 1.8s ease both;
+      }
+
+      #prize-transition[hidden] {
+        display: none;
+      }
+
+      .prize-message {
+        z-index: 1;
+        padding: 32px;
+        color: #1f534e;
+        text-align: center;
+        animation: prize-pop 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+      }
+
+      .prize-message span {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 56px;
+      }
+
+      .prize-message h1 {
+        margin: 0;
+        font: 800 clamp(30px, 8vw, 54px)/1.1 Arial, sans-serif;
+        text-shadow: 0 2px 0 #fff;
+      }
+
+      .prize-message p {
+        margin: 12px 0 0;
+        font: 600 18px Arial, sans-serif;
+      }
+
+      .confetti {
+        position: absolute;
+        top: -10%;
+        left: var(--left);
+        width: 10px;
+        height: 18px;
+        border-radius: 2px;
+        background: var(--color);
+        animation: confetti-fall var(--duration) ease-in var(--delay) both;
+      }
+
+      @keyframes prize-background {
+        0% { opacity: 0; }
+        15%, 75% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+
+      @keyframes prize-pop {
+        0% { opacity: 0; transform: scale(0.45) rotate(-8deg); }
+        18%, 75% { opacity: 1; transform: scale(1) rotate(0); }
+        100% { opacity: 0; transform: scale(1.15); }
+      }
+
+      @keyframes confetti-fall {
+        to { transform: translate3d(var(--drift), 115vh, 0) rotate(720deg); }
+      }
+
+      @keyframes model-reveal {
+        from { opacity: 0; transform: scale(0.88); }
+        to { opacity: 1; transform: scale(1); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #prize-transition,
+        .prize-message,
+        .confetti {
+          animation-duration: 0.01ms;
+        }
+      }
+    </style>
   </head>
   <body>
-    
+    <button id="view-model-button" type="button" disabled>
+      Escanea una imagen para ver el modelo
+    </button>
+
     <a-scene mindar-image="imageTargetSrc: assets/targets(Todos).mind;"
          color-space="sRGB"
          renderer="colorManagement: true, physicallyCorrectLights"
@@ -77,5 +205,95 @@
       </a-entity>
 
     </a-scene>
+
+    <model-viewer id="model-viewer"
+                  src="assets/Animacioncarta.glb"
+                  camera-controls
+                  tone-mapping="neutral"
+                  shadow-intensity="1"
+                  autoplay
+                  hidden>
+      <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+      </div>
+    </model-viewer>
+
+    <div id="prize-transition" aria-live="polite" hidden>
+      <span class="confetti" aria-hidden="true" style="--left: 8%; --color: #d32c3a; --drift: 35vw; --duration: 1.4s; --delay: 0s;"></span>
+      <span class="confetti" aria-hidden="true" style="--left: 18%; --color: #fff; --drift: -20vw; --duration: 1.7s; --delay: 0.1s;"></span>
+      <span class="confetti" aria-hidden="true" style="--left: 29%; --color: #4592f6; --drift: 25vw; --duration: 1.5s; --delay: 0.2s;"></span>
+      <span class="confetti" aria-hidden="true" style="--left: 41%; --color: #d32c3a; --drift: -30vw; --duration: 1.8s; --delay: 0s;"></span>
+      <span class="confetti" aria-hidden="true" style="--left: 53%; --color: #fff; --drift: 20vw; --duration: 1.6s; --delay: 0.15s;"></span>
+      <span class="confetti" aria-hidden="true" style="--left: 64%; --color: #4592f6; --drift: -25vw; --duration: 1.5s; --delay: 0.25s;"></span>
+      <span class="confetti" aria-hidden="true" style="--left: 76%; --color: #d32c3a; --drift: 18vw; --duration: 1.7s; --delay: 0.05s;"></span>
+      <span class="confetti" aria-hidden="true" style="--left: 91%; --color: #fff; --drift: -35vw; --duration: 1.4s; --delay: 0.2s;"></span>
+      <div class="prize-message">
+        <span aria-hidden="true">🏆</span>
+        <h1>Nueva Carta disponible</h1>      
+      </div>
+    </div>
+
+    <script>
+      const scanScene = document.querySelector("a-scene[mindar-image]");
+      const modelViewer = document.querySelector("#model-viewer");
+      const prizeTransition = document.querySelector("#prize-transition");
+      const viewModelButton = document.querySelector("#view-model-button");
+      let scanSucceeded = false;
+      let transitionFinished = false;
+
+      const finishPrizeTransition = () => {
+        if (transitionFinished) {
+          return;
+        }
+
+        transitionFinished = true;
+        prizeTransition.hidden = true;
+        modelViewer.hidden = false;
+        modelViewer.style.animation = "model-reveal 0.7s ease-out both";
+      };
+
+      document.querySelectorAll("[mindar-image-target]").forEach((target) => {
+        target.addEventListener("targetFound", () => {
+          scanSucceeded = true;
+          viewModelButton.disabled = false;
+          viewModelButton.textContent = "Mostrar modelo";
+        });
+      });
+
+      viewModelButton.addEventListener("click", () => {
+        if (!scanSucceeded) {
+          return;
+        }
+
+        const mindarSystem = scanScene.systems["mindar-image-system"];
+        if (!mindarSystem) {
+          console.error("No se encontró el sistema MindAR para detener la cámara.");
+          return;
+        }
+
+        const cameraStream = mindarSystem.video?.srcObject;
+        try {
+          mindarSystem.stop();
+        } catch (error) {
+          console.error("MindAR no pudo completar el cierre normal de la cámara.", error);
+        } finally {
+          cameraStream?.getTracks().forEach((track) => track.stop());
+          mindarSystem.ui?.scanningMask?.classList.add("hidden");
+          mindarSystem.video?.remove();
+          scanScene.style.display = "none";
+          viewModelButton.hidden = true;
+          prizeTransition.hidden = false;
+          window.setTimeout(finishPrizeTransition, 1900);
+        }
+      });
+
+      prizeTransition.addEventListener("animationend", (event) => {
+        if (event.target !== prizeTransition) {
+          return;
+        }
+
+        finishPrizeTransition();
+      });
+    </script>
   </body>
 </html>
