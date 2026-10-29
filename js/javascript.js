@@ -395,15 +395,21 @@ if (btnEmpezar) {
     mostrar(contenedorPregunta, false);
     mostrar(victoria, true);
 
-    if (esUltimaRonda) {
-      tituloFinal.textContent = "¡Trivia completada!"; // En caso de responder todas las preguntas
-    } else if (tiempoAgotado) {
-      tituloFinal.textContent = "¡Se acabó el tiempo!"; // En caso de que se termine el tiempo
-    } else if (puntaje >= PUNTOS_PARA_GANAR) {
-      tituloFinal.textContent = "¡Felicidades!"; // En caso de alcanzar el puntaje necesario para ganar
-    } else {
-      tituloFinal.textContent = "¡Buen intento!"; // En caso de no alcanzar los puntos necesarios
-    }
+victoria.classList.remove("estado-ganaste", "estado-tiempo", "estado-intento");
+
+  if (esUltimaRonda) {
+    tituloFinal.textContent = "¡Trivia completada!"; // En caso de responder todas las preguntas
+    victoria.classList.add("estado-ganaste");
+  } else if (tiempoAgotado) {
+    tituloFinal.textContent = "¡Se acabó el tiempo!"; // En caso de que se termine el tiempo
+    victoria.classList.add("estado-tiempo");
+  } else if (puntaje >= PUNTOS_PARA_GANAR) {
+    tituloFinal.textContent = "¡Felicidades!"; // En caso de alcanzar el puntaje necesario para ganar
+    victoria.classList.add("estado-ganaste");
+  } else {
+    tituloFinal.textContent = "¡Buen intento!"; // En caso de no alcanzar los puntos necesarios
+    victoria.classList.add("estado-intento");
+}
 
     finalScore.textContent = puntaje;
     tiempoFinal.textContent = tiempoUsado;

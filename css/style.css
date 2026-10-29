@@ -431,42 +431,51 @@ button {
   z-index: 999;
 }
 
-.InfoTest{
-  color:#040505;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  align-items: center;
-  gap: 40px;
-  margin-top: 10px;          /* separación respecto al título */
+/* ===== Marcador de la trivia ===== */
+.InfoTest {
+  color: #040505;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
   margin-bottom: 30px;
   font-weight: bold;
-  
 }
-.question-count{
-  background: #f5f5f5;     
-  padding: 10px 20px;
-  border-radius: 12px;     
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15); 
-  width: 220px;            
-  text-align: center;       
+.InfoTest .titulo-interior {
+  grid-column: 1 / -1;     /* el título ocupa toda la fila de arriba */
 }
-.timer{
-  background: #f5f5f5;     
-  padding: 10px 20px;
-  border-radius: 12px;     
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15); 
-  width: 220px;            
-  text-align: center;       
+
+.question-count,
+.timer,
+.score {
+  padding: 10px 4px 12px;
+  border-radius: 12px;
+  border-bottom: 4px solid var(--red);
+  background: linear-gradient(180deg, #2a6d66 0%, var(--green) 100%);
+  box-shadow: 0 4px 10px rgba(31, 83, 78, 0.35);
+  color: #fff;
+  text-align: center;
 }
-.score{
-  background: #f5f5f5;     
-  padding: 10px 20px;
-  border-radius: 12px;     
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15); 
-  width: 220px;            
-  text-align: center;       
+
+.InfoTest small {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #cfe3e0;
 }
+
+.InfoTest .valor {
+  display: block;
+  font-size: clamp(1.2rem, 6vw, 1.7rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ffd54a;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 8px rgba(255, 213, 74, 0.45);
+}    
+
 .enviar{
   border: none;
   background-color: #ebebeb;
@@ -697,4 +706,102 @@ button {
   font-style: italic;
   text-align: center;
   color: #555;
+}
+
+
+/* ===== Pantalla de resultados ===== */
+.Victoria {
+  --estado: var(--green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 420px;
+  margin: 10px auto 0;
+  padding: 24px 20px 28px;
+  color: #040505;
+  text-align: center;
+  background: #fff;
+  border-radius: 20px;
+  border-top: 8px solid var(--estado);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+  animation: pop-in 0.5s ease both;      /* aparece con un pequeño "pop" */
+}
+
+/* Ícono grande sobre el título */
+.Victoria::before {
+  content: "⚾";
+  font-size: 3.2rem;
+  line-height: 1;
+  animation: rebote 0.9s ease 0.3s both;
+}
+
+/* Estados que asigna el JS */
+.estado-ganaste { --estado: #2e9e5b; }
+.estado-ganaste::before { content: "🏆"; }
+.estado-tiempo  { --estado: #C00000; }
+.estado-tiempo::before  { content: "⏱️"; }
+.estado-intento { --estado: #e08a00; }
+
+.Victoria .titulo-Final {
+  margin: 0;
+  padding: 0;
+  font-family: "Lobster", cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--estado);
+}
+
+.resultado-puntos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resultado-etiqueta {
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #555;
+}
+.resultado-numero {
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--estado);
+}
+.resultado-numero small {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #888;
+}
+.resultado-tiempo {
+  margin: 0;
+  color: #555;
+}
+
+#resumen-total {
+  margin: 4px 0 8px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  background: #eef4f3;
+  border-radius: 999px;
+}
+
+.Victoria .Siguiente,
+.Victoria .Menu1 {
+  width: 100%;
+  max-width: 260px;
+  font-weight: 800;
+}
+
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.85); }
+  60%  { transform: scale(1.04); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes rebote {
+  0%, 100% { transform: translateY(0); }
+  40%      { transform: translateY(-12px); }
+  70%      { transform: translateY(0); }
+  85%      { transform: translateY(-5px); }
 }

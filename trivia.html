@@ -21,11 +21,20 @@
         
         <h2 class="Bienvenido">BIENVENIDO A LA TRIVIA DE BEISBOL</h2>
         <button class="Empezar" id="Empezar">Empezar</button>
-        <div class="InfoTest ">
+        <div class="InfoTest">
           <h2 class="titulo-interior">TRIVIA</h2>
-          <span class = "question-count">Pregunta <span id="current">1</span>/<span id="total">5</span></span>
-          <span class="timer">Tiempo: <span id ="time">60</span>s</span>
-           <span class="score">Puntuación: <span id ="score">0</span></span>
+          <span class="question-count">
+            <small>Pregunta</small>
+            <b class="valor"><span id="current">1</span>/<span id="total">5</span></b>
+          </span>
+          <span class="timer">
+            <small>Tiempo</small>
+            <b class="valor"><span id="time">60</span>s</b>
+        </span>
+        <span class="score">
+            <small>Puntos</small>
+            <b class="valor"><span id="score">0</span></b>
+          </span>
         </div>
         <div class="pregunta ">
           <p class="Titulo-de-pregunta" id="Titulo-de-pregunta">Nombre de pregunta</p>
@@ -46,10 +55,13 @@
           <br>
           <button class="enviar" id="enviar">Enviar</button>
         </div>
-        <div class="Victoria ">
+        <div class="Victoria">
           <h2 class="titulo-Final">Felicidades</h2>
-          <p>Tu puntuación: <span id="final-score">0</span>/1000</p>
-          <p>Tiempo: <span id="completition-time">0</span> segundos</p>
+          <div class="resultado-puntos">
+            <span class="resultado-etiqueta">Tu puntuación</span>
+            <span class="resultado-numero"><span id="final-score">0</span><small>/1000</small></span>
+          </div>
+          <p class="resultado-tiempo">⏱ <span id="completition-time">0</span> segundos</p>
           <button class="Siguiente" id="Siguiente">Siguiente Ronda</button>
           <button class="Menu1">Jugar de nuevo</button>
         </div>
