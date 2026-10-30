@@ -944,11 +944,11 @@ button {
   box-shadow: none;
 }
 
-css
 .brand-logo {
   display: block;
-  height: 46px;      /* dentro de los 80px del header, con el subtítulo debajo */
-  width: auto;       /* mantiene la proporción */
+  height: 46px !important;
+  width: auto !important;
   max-width: 100%;
   margin: 0 auto;
 }
+
