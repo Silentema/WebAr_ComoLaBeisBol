@@ -170,7 +170,17 @@
         #prize-transition,
         .prize-message,
         .confetti {
-          animation-duration: 0.01ms;
+          animation: none;
+        }
+
+        #prize-transition,
+        .prize-message {
+          opacity: 1;
+          transform: none;
+        }
+
+        .confetti {
+          display: none;
         }
       }
     </style>
@@ -281,6 +291,11 @@
     </div>
 
     <script>
+      console.log(
+        " prefers-reduced-motion activado:",
+        matchMedia("(prefers-reduced-motion: reduce)").matches
+      );
+
       const scanScene = document.querySelector("a-scene[mindar-image]");
       const modelViewer = document.querySelector("#model-viewer");
       const prizeTransition = document.querySelector("#prize-transition");
@@ -472,13 +487,6 @@
         });
       });
 
-      prizeTransition.addEventListener("animationend", (event) => {
-        if (event.target !== prizeTransition) {
-          return;
-        }
-
-        finishPrizeTransition();
-      });
     </script>
   </body>
 </html>
