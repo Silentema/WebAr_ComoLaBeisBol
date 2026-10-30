@@ -15,25 +15,40 @@
         overflow: hidden;
       }
 
-      #view-model-button {
+      #scan-progress {
         position: fixed;
         z-index: 10;
         bottom: 24px;
         left: 50%;
         transform: translateX(-50%);
-        padding: 12px 20px;
-        border: 0;
+        width: min(360px, calc(100vw - 40px));
+        padding: 14px 18px;
         border-radius: 8px;
-        background: #1f534e;
+        background: rgba(31, 83, 78, 0.94);
         color: #fff;
-        font: 600 16px Arial, sans-serif;
-        cursor: pointer;
+        font: 600 15px Arial, sans-serif;
+        box-sizing: border-box;
       }
 
-      #view-model-button:disabled {
-        background: #777;
-        cursor: not-allowed;
-        opacity: 0.7;
+      #scan-progress-label {
+        display: block;
+        margin-bottom: 9px;
+        text-align: center;
+      }
+
+      #scan-progress-track {
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      #scan-progress-bar {
+        width: 0;
+        height: 100%;
+        border-radius: inherit;
+        background: #fff;
+        transition: width 0.08s linear;
       }
 
       #model-viewer {
@@ -48,6 +63,35 @@
 
       #model-viewer[hidden] {
         display: none;
+      }
+
+      #post-prize-actions {
+        position: fixed;
+        z-index: 50;
+        right: 0;
+        bottom: max(24px, env(safe-area-inset-bottom));
+        left: 0;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding: 0 16px;
+      }
+
+      #post-prize-actions[hidden] {
+        display: none;
+      }
+
+      .post-prize-button {
+        min-height: 48px;
+        padding: 12px 18px;
+        border: 0;
+        border-radius: 8px;
+        background: #1f534e;
+        color: #fff;
+        font: 600 15px Arial, sans-serif;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
       }
 
       #prize-transition {
@@ -132,9 +176,17 @@
     </style>
   </head>
   <body>
-    <button id="view-model-button" type="button" disabled>
-      Escanea una imagen para ver el modelo
-    </button>
+    <div id="scan-progress" role="status">
+      <span id="scan-progress-label">Enfoca una imagen para abrir el sobre</span>
+      <div id="scan-progress-track"
+           role="progressbar"
+           aria-label="Progreso de la animación del sobre"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-valuenow="0">
+        <div id="scan-progress-bar"></div>
+      </div>
+    </div>
 
     <a-scene mindar-image="imageTargetSrc: assets/targets(Todos).mind;"
          color-space="sRGB"
@@ -146,68 +198,58 @@
 
       <a-entity mindar-image-target="targetIndex: 0">
         <a-gltf-model src="assets/SobreAnim3.glb"
-                      position="0 0 0.1" rotation="0 90 0" scale="0.5 0.5 0.5"
-                      animation-mixer="clip: *; loop: repeat"></a-gltf-model>
+                      position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 1">
         <a-gltf-model src="assets/SobreAnim3.glb"
-                      position="0 0 0.1" rotation="0 90 0" scale="0.5 0.5 0.5"
-                      animation-mixer="clip: *; loop: repeat"></a-gltf-model>
+                      position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 2">
         <a-gltf-model src="assets/SobreAnim3.glb"
-                      position="0 0 0.1" rotation="0 90 0" scale="0.5 0.5 0.5"
-                      animation-mixer="clip: *; loop: repeat"></a-gltf-model>
+                      position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 3">
         <a-gltf-model src="assets/SobreAnim3.glb"
-                      position="0 0 0.1" rotation="0 90 0" scale="0.5 0.5 0.5"
-                      animation-mixer="clip: *; loop: repeat"></a-gltf-model>
+                      position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 4">
         <a-gltf-model src="assets/SobreAnim3.glb"
-                      position="0 0 0.1" rotation="0 90 0" scale="0.5 0.5 0.5"
-                      animation-mixer="clip: *; loop: repeat"></a-gltf-model>
+                      position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 5">
         <a-gltf-model src="assets/SobreAnim3.glb"
-                      position="0 0 0.1" rotation="0 90 0" scale="0.5 0.5 0.5"
-                      animation-mixer="clip: *; loop: repeat"></a-gltf-model>
+                      position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 6">
         <a-gltf-model src="assets/SobreAnim3.glb"
-                      position="0 0 0.1" rotation="0 90 0" scale="0.5 0.5 0.5"
-                      animation-mixer="clip: *; loop: repeat"></a-gltf-model>
+                      position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 7">
         <a-gltf-model src="assets/SobreAnim3.glb"
-                      position="0 0 0.1" rotation="0 90 0" scale="0.5 0.5 0.5"
-                      animation-mixer="clip: *; loop: repeat"></a-gltf-model>
+                      position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 8">
         <a-gltf-model src="assets/SobreAnim3.glb"
-                      position="0 0 0.1" rotation="0 90 0" scale="0.5 0.5 0.5"
-                      animation-mixer="clip: *; loop: repeat"></a-gltf-model>
+                      position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 9">
         <a-gltf-model src="assets/SobreAnim3.glb"
-                      position="0 0 0.1" rotation="0 90 0" scale="0.5 0.5 0.5"
-                      animation-mixer="clip: *; loop: repeat"></a-gltf-model>
+                      position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
     </a-scene>
 
     <model-viewer id="model-viewer"
-                  src="assets/Animacioncarta.glb"
+                  src="assets/Animacioncarta1Veracruz.glb"
                   camera-controls
                   tone-mapping="neutral"
                   shadow-intensity="1"
@@ -217,6 +259,11 @@
         <div class="update-bar"></div>
       </div>
     </model-viewer>
+
+    <div id="post-prize-actions" hidden>
+      <a class="post-prize-button" href="index.html">Regresar a menú</a>
+      <button class="post-prize-button" type="button">Colección de cartas</button>
+    </div>
 
     <div id="prize-transition" aria-live="polite" hidden>
       <span class="confetti" aria-hidden="true" style="--left: 8%; --color: #d32c3a; --drift: 35vw; --duration: 1.4s; --delay: 0s;"></span>
@@ -237,9 +284,32 @@
       const scanScene = document.querySelector("a-scene[mindar-image]");
       const modelViewer = document.querySelector("#model-viewer");
       const prizeTransition = document.querySelector("#prize-transition");
-      const viewModelButton = document.querySelector("#view-model-button");
+      const progressLabel = document.querySelector("#scan-progress-label");
+      const progressTrack = document.querySelector("#scan-progress-track");
+      const progressBar = document.querySelector("#scan-progress-bar");
+      const envelopeAnimationSpeed = 1.6;
+      const cartasPorTarget = {
+        0: "assets/Animacioncarta1Veracruz.glb",
+        1: "assets/Animacioncarta2Leon.glb",
+        2: "assets/Animacioncarta3Queretaro.glb",
+        3: "assets/Animacioncarta4CiudadDeMexico.glb",
+        4: "assets/Animacioncarta5Guerrero.glb",
+        5: "assets/Animacioncarta6Yucatan.glb",
+        6: "assets/Animacioncarta7Tabasco.glb",
+        7: "assets/Animacioncarta8Puebla.glb",
+        8: "assets/Animacioncarta9Campeche.glb",
+        9: "assets/Animacioncarta10Qroo.glb"
+      };
       let scanSucceeded = false;
       let transitionFinished = false;
+      let animationStarted = false;
+      let animationFinished = false;
+      let targetVisible = false;
+      let activeTarget = null;
+      let animationDuration = 0;
+      let animationElapsed = 0;
+      let animationRunStartedAt = null;
+      let animationFrame;
 
       const finishPrizeTransition = () => {
         if (transitionFinished) {
@@ -250,21 +320,47 @@
         prizeTransition.hidden = true;
         modelViewer.hidden = false;
         modelViewer.style.animation = "model-reveal 0.7s ease-out both";
+        document.querySelector("#post-prize-actions").hidden = false;
       };
 
-      document.querySelectorAll("[mindar-image-target]").forEach((target) => {
-        target.addEventListener("targetFound", () => {
-          scanSucceeded = true;
-          viewModelButton.disabled = false;
-          viewModelButton.textContent = "Mostrar modelo";
-        });
-      });
-
-      viewModelButton.addEventListener("click", () => {
-        if (!scanSucceeded) {
+      const updateProgress = (now) => {
+        if (animationRunStartedAt === null || animationFinished) {
           return;
         }
 
+        const elapsed = animationElapsed + (now - animationRunStartedAt);
+        const progress = Math.min(elapsed / (animationDuration * 1000), 0.99);
+        const percentage = Math.floor(progress * 100);
+        progressBar.style.width = `${percentage}%`;
+        progressTrack.setAttribute("aria-valuenow", String(percentage));
+
+        if (percentage < 99) {
+          animationFrame = requestAnimationFrame(updateProgress);
+        }
+      };
+
+      const pauseEnvelopeAnimation = (modelElement) => {
+        if (!animationStarted || animationFinished || animationRunStartedAt === null) {
+          return;
+        }
+
+        animationElapsed += performance.now() - animationRunStartedAt;
+        animationRunStartedAt = null;
+        cancelAnimationFrame(animationFrame);
+        modelElement.setAttribute("animation-mixer", "timeScale", 0);
+      };
+
+      const resumeEnvelopeAnimation = (modelElement) => {
+        if (!animationStarted || animationFinished || !targetVisible || animationRunStartedAt !== null) {
+          return;
+        }
+
+        animationRunStartedAt = performance.now();
+        modelElement.setAttribute("animation-mixer", "timeScale", envelopeAnimationSpeed);
+        animationFrame = requestAnimationFrame(updateProgress);
+      };
+
+      const showPrize = () => {
         const mindarSystem = scanScene.systems["mindar-image-system"];
         if (!mindarSystem) {
           console.error("No se encontró el sistema MindAR para detener la cámara.");
@@ -281,10 +377,99 @@
           mindarSystem.ui?.scanningMask?.classList.add("hidden");
           mindarSystem.video?.remove();
           scanScene.style.display = "none";
-          viewModelButton.hidden = true;
+          document.querySelector("#scan-progress").hidden = true;
           prizeTransition.hidden = false;
           window.setTimeout(finishPrizeTransition, 1900);
         }
+      };
+
+      const startEnvelopeAnimation = (modelElement) => {
+        if (animationStarted) {
+          return;
+        }
+
+        const model = modelElement.getObject3D("mesh");
+        const clips = model?.animations;
+        if (!clips?.length) {
+          console.error("El modelo del sobre no contiene animaciones.");
+          progressLabel.textContent = "No se pudo cargar la animación del sobre";
+          return;
+        }
+
+        animationStarted = true;
+        animationDuration = Math.max(...clips.map((clip) => clip.duration)) / envelopeAnimationSpeed;
+        const finishedClips = new Set();
+
+        modelElement.addEventListener("animation-finished", (event) => {
+          finishedClips.add(event.detail.action.getClip());
+          if (finishedClips.size === clips.length) {
+            animationFinished = true;
+            animationRunStartedAt = null;
+            cancelAnimationFrame(animationFrame);
+            progressBar.style.width = "100%";
+            progressTrack.setAttribute("aria-valuenow", "100");
+            showPrize();
+          }
+        });
+
+        modelElement.setAttribute(
+          "animation-mixer",
+          "clip: *; loop: once; timeScale: 0"
+        );
+        progressLabel.textContent = "Abriendo sobre...";
+        resumeEnvelopeAnimation(modelElement);
+      };
+
+      document.querySelectorAll("[mindar-image-target]").forEach((target) => {
+        target.addEventListener("targetFound", () => {
+          if (scanSucceeded && target !== activeTarget) {
+            return;
+          }
+
+          targetVisible = true;
+          if (scanSucceeded) {
+            const modelElement = target.querySelector("a-gltf-model");
+            progressLabel.textContent = "Abriendo sobre...";
+            resumeEnvelopeAnimation(modelElement);
+            return;
+          }
+
+          const targetIndex = Number(
+            target.getAttribute("mindar-image-target").targetIndex
+          );
+          const cartaSrc = cartasPorTarget[targetIndex];
+          console.info(`Logo detectado: targetIndex ${targetIndex}`);
+
+          if (!cartaSrc) {
+            console.error(
+              `No hay una carta configurada para targetIndex ${targetIndex}. Agrégala en cartasPorTarget.`
+            );
+            progressLabel.textContent = `Falta configurar la carta para el índice ${targetIndex}`;
+            return;
+          }
+
+          scanSucceeded = true;
+          activeTarget = target;
+          modelViewer.src = cartaSrc;
+          const modelElement = target.querySelector("a-gltf-model");
+          modelElement.addEventListener("model-loaded", () => {
+            startEnvelopeAnimation(modelElement);
+          }, { once: true });
+
+          if (modelElement.getObject3D("mesh")) {
+            startEnvelopeAnimation(modelElement);
+          }
+        });
+
+        target.addEventListener("targetLost", () => {
+          if (target !== activeTarget || animationFinished) {
+            return;
+          }
+
+          targetVisible = false;
+          pauseEnvelopeAnimation(target.querySelector("a-gltf-model"));
+          progressLabel.textContent = "Apunta de nuevo al logo para continuar";
+        });
       });
 
       prizeTransition.addEventListener("animationend", (event) => {
