@@ -1206,3 +1206,23 @@ if (document.getElementById("equipo-nombre")) {
 
   irAEquipo(0);
 }
+
+//IMAGENES
+
+//datos escenciales
+const Videos = document.querySelectorAll(".video-container video");
+const videoseleccionado = document.querySelector(".Popup-video span");
+const videopop = document.querySelector(".Popup-video");
+const videoUp = document.querySelector(".Popup-video video");
+//proceso de abrir video
+Videos.forEach(vid => {
+  vid.onclick = () =>{
+    videopop.style.display = "block";
+    videoUp.src=vid.getAttribute('src');
+  }
+})
+
+videoseleccionado.onclick = () => {
+  videopop.style.display = "none";
+  videoUp.pause();
+}
