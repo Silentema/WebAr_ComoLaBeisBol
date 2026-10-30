@@ -743,6 +743,20 @@ button {
 .estado-tiempo::before  { content: "⏱️"; }
 .estado-intento { --estado: #e08a00; }
 
+
+/* Niveles de la pantalla final */
+.nivel-oro    { --estado: #c9971c; }
+.nivel-oro::before    { content: "🏆"; }
+
+.nivel-plata  { --estado: #7d8a99; }
+.nivel-plata::before  { content: "🥈"; }
+
+.nivel-bronce { --estado: #b5651d; }
+.nivel-bronce::before { content: "🥉"; }
+
+.nivel-triste { --estado: #6b7a99; }
+.nivel-triste::before { content: "😢"; }
+
 .Victoria .titulo-Final {
   margin: 0;
   padding: 0;
@@ -777,6 +791,18 @@ button {
 .resultado-tiempo {
   margin: 0;
   color: #555;
+}
+
+.resultado-mensaje {
+  margin: -4px 0 0;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--estado);   /* cambia de color con el nivel, igual que el ícono */
+}
+.resultado-mensaje:empty {
+  display: none;          /* si no hay mensaje, no ocupa espacio */
 }
 
 #resumen-total {

@@ -289,6 +289,9 @@ const equipos = [
   }
 ];
 
+const NIVEL_ORO    = 0.9; // porcentaje mínimo para cada nivel
+const NIVEL_PLATA  = 0.7;
+const NIVEL_BRONCE = 0.4;
 const TOTAL_RONDAS = 5;
 const PREGUNTAS_POR_RONDA = 10;
 const TIEMPO_RONDA = 120;
@@ -323,6 +326,7 @@ if (btnEmpezar) {
   const btnEnviar    = document.getElementById("enviar");
 
   const tituloFinal  = document.querySelector(".titulo-Final");
+  const mensajeFinal = document.getElementById("resultado-mensaje");
   const finalScore   = document.getElementById("final-score");
   const tiempoFinal  = document.getElementById("completition-time");
   const btnSiguiente = document.getElementById("Siguiente");
@@ -395,21 +399,40 @@ if (btnEmpezar) {
     mostrar(contenedorPregunta, false);
     mostrar(victoria, true);
 
-victoria.classList.remove("estado-ganaste", "estado-tiempo", "estado-intento");
+
+  victoria.classList.remove(
+    "estado-ganaste", "estado-tiempo", "estado-intento",
+    "nivel-oro", "nivel-plata", "nivel-bronce", "nivel-triste"
+  );
+  mensajeFinal.textContent = ""; // vacío por defecto (rondas intermedias)
 
   if (esUltimaRonda) {
-    tituloFinal.textContent = "¡Trivia completada!"; // En caso de responder todas las preguntas
-    victoria.classList.add("estado-ganaste");
+    const porcentaje = puntajeTotal / (TOTAL_RONDAS * PREGUNTAS_POR_RONDA * PUNTOS_POR_PREGUNTA);
+    tituloFinal.textContent = "¡Trivia completada!";
+
+    if (porcentaje >= NIVEL_ORO) {
+      mensajeFinal.textContent = "¡Perfecto!";
+      victoria.classList.add("nivel-oro");
+    } else if (porcentaje >= NIVEL_PLATA) {
+      mensajeFinal.textContent = "¡Excelente!";
+      victoria.classList.add("nivel-plata");
+    } else if (porcentaje >= NIVEL_BRONCE) {
+      mensajeFinal.textContent = "¡Buen trabajo!";
+      victoria.classList.add("nivel-bronce");
+    } else {
+      mensajeFinal.textContent = "¡Sigue practicando!";
+      victoria.classList.add("nivel-triste");
+    }
   } else if (tiempoAgotado) {
-    tituloFinal.textContent = "¡Se acabó el tiempo!"; // En caso de que se termine el tiempo
+    tituloFinal.textContent = "¡Se acabó el tiempo!";
     victoria.classList.add("estado-tiempo");
   } else if (puntaje >= PUNTOS_PARA_GANAR) {
-    tituloFinal.textContent = "¡Felicidades!"; // En caso de alcanzar el puntaje necesario para ganar
+    tituloFinal.textContent = "¡Felicidades!";
     victoria.classList.add("estado-ganaste");
   } else {
-    tituloFinal.textContent = "¡Buen intento!"; // En caso de no alcanzar los puntos necesarios
+    tituloFinal.textContent = "¡Buen intento!";
     victoria.classList.add("estado-intento");
-}
+  }
 
     finalScore.textContent = puntaje;
     tiempoFinal.textContent = tiempoUsado;
