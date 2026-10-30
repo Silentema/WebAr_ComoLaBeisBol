@@ -943,3 +943,12 @@ button {
 .page-trivia .Victoria {
   box-shadow: none;
 }
+
+css
+.brand-logo {
+  display: block;
+  height: 46px;       /* con el subtítulo debajo, dentro de los 80px del header */
+  width: auto;        /* mantiene la proporción */
+  max-width: 100%;
+  margin: 0 auto;
+}
