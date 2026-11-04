@@ -1584,12 +1584,176 @@ button {
     }
 }
 
-/* CENTRAR LAS FLECHAS CON EL REPRODUCTOR */
 
-.video-slider > button {
-    margin-top: 0;
-    align-self: flex-start;
-    transform: translateY(
-        calc((min(80vw, 900px) * 9 / 16 - 45px) / 2)
-    );
+/* GALERÍA RESPONSIVA PARA TELÉFONOS */
+
+@media (max-width: 700px) {
+
+    /* CONTENEDOR PRINCIPAL */
+
+    main.page {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    main.page > .contenedor-general {
+        width: 100%;
+        max-width: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    /* SLIDER */
+
+    .video-slider {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        width: 100%;
+        max-width: none;
+        margin: 20px 0;
+        align-items: center;
+    }
+
+    /*
+    Permite colocar el video, las flechas y
+    la información en filas independientes.
+    */
+
+    .video-slider .slider-contenido {
+        display: contents;
+    }
+
+    /* VIDEO A TODO EL ANCHO DISPONIBLE */
+
+    .video-slider .video-marco {
+        grid-column: 1 / -1;
+        grid-row: 1;
+
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        margin: 0;
+        border-radius: 10px;
+    }
+
+    .video-slider #video-actual {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    /* FLECHAS DEBAJO DEL REPRODUCTOR */
+
+    .video-slider > button {
+        position: static;
+        transform: none;
+        margin: 0;
+
+        width: 100%;
+        max-width: 150px;
+        height: 48px;
+
+        border-radius: 12px;
+        font-size: 26px;
+
+        align-self: center;
+    }
+
+    .video-slider > #anterior {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    .video-slider > #siguiente {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: start;
+    }
+
+    /* CUADRO VERDE */
+
+    .video-slider .video-info {
+        grid-column: 1 / -1;
+        grid-row: 3;
+
+        width: 100%;
+        max-width: none;
+
+        margin: 0;
+        padding: 16px;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+    /* DESCRIPCIÓN Y CONTADOR */
+
+    .video-encabezado {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .video-info #contador-video {
+        flex-shrink: 0;
+        font-size: 12px;
+        padding: 6px 8px;
+        margin: 0;
+    }
+
+    .video-info #titulo-video {
+        flex: 1;
+        min-width: 0;
+        font-size: 16px;
+        line-height: 1.45;
+        overflow-wrap: break-word;
+        margin: 0;
+    }
+
+    /* TÍTULO DE FILTROS */
+
+    .video-info .titulo-filtros {
+        font-size: 22px;
+        margin: 25px 0 15px;
+    }
+
+    /* FILTROS EN DOS COLUMNAS */
+
+    .filtros-galeria {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+
+    .video-slider .filtros-galeria .filtro-btn {
+        width: 100%;
+        min-width: 0;
+        min-height: 145px;
+        height: auto;
+        padding: 8px;
+    }
+
+    /* VISTA PREVIA DEL FILTRO */
+
+    .filtro-preview {
+        width: 100%;
+        height: 95px;
+    }
+
+    .filtro-nombre {
+        font-size: 14px;
+        line-height: 1.3;
+        padding: 10px 2px 4px;
+    }
+
 }
+
