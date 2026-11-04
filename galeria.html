@@ -1,43 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Como la beisbol</title>
-        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-        <link rel="stylesheet" href="css/style.css">    
-    </head>
-    <body>
 
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Como la beisbol - Galería</title>
+    <script
+        type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
     <main class="page">
-      <div id="header-container">
-        <!-- El contenido del header se carga aquí mediante JavaScript asi creo que es mas facil de enteder, mas modular xd -->
-      </div>
-      
-
-      <div class="contenedor-general"> <!--No se como ponerle la esctructura a este div xd-->
-        <h2 class="titulo-interior">GALERÍA</h2>
-    <!--------------------------------------------------------------------------------------------------------------->
-        <div class="video-slider">
-            <button id="anterior" type="button">❮</button>
-            <div class="slider-contenido">
-                <video id="video-actual"
-                   controls
-                   preload="none">
-                </video>
-            <h3 id="titulo-video"></h3>
-            <p id="contador-video"></p>
+        <div id="header-container">
         </div>
-        <button id="siguiente" type="button">❯</button>
-    </div>
-    <!--------------------------------------------------------------------------------------------------------------->      
-          <span>&times;</span>
-          <video src="assets/Videos/Con Walk-off de Esteban Quiróz los Bravos de León derrotaron 10-7 a Olmecas de Tabasco.mp4" autoplay controls></video>
+        <div class="contenedor-general">
+            <h2 class="titulo-interior">GALERÍA</h2>
+            <!-- SLIDER DE VIDEOS -->
+            <div class="video-slider">
+                <button id="anterior" type="button" aria-label="Video anterior">
+                    ❮
+                </button>
+                <!-- Reproductor -->
+                <div class="slider-contenido">
+                    <video
+                        id="video-actual"
+                        controls
+                        preload="none">
+                    </video>
+                    <!-- Título del video -->
+                    <h3 id="titulo-video"></h3>
+                    <!-- Contador de videos -->
+                    <p id="contador-video"></p>
+                </div>
+                <button id="siguiente" type="button" aria-label="Siguiente video">
+                    ❯
+                </button>
+            </div>
         </div>
-      </div>
     </main>
     <script src="js/javascript.js"></script>
-    </body>
+
+</body>
 </html>
+
