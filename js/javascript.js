@@ -1249,7 +1249,31 @@ if (reproductor && tituloVideo && contadorVideo &&
     botonAnterior && botonSiguiente) {
 
     let indiceActual = 0;
+    //---------------------------------------------------------------------------------  
+    // FILTROS DE VIDEO
+    const marcoVideo = document.getElementById("video-marco");
+    const botonesFiltro = document.querySelectorAll(".filtro-btn");
 
+    botonesFiltro.forEach(boton => {
+
+      boton.addEventListener("click", () => {
+        // Obtener el filtro seleccionado
+        const filtro = boton.dataset.filtro;
+        // Aplicarlo al reproductor
+        marcoVideo.dataset.filtro = filtro;
+        // Actualizar el botón activo
+        botonesFiltro.forEach(b => {
+            const activo = b === boton;
+
+            b.classList.toggle("activo", activo);
+            b.setAttribute("aria-pressed", String(activo));
+        });
+
+    });
+
+});
+
+    //---------------------------------------------------------------------------------
     function mostrarVideo(indice) {
       reproductor.pause();
       reproductor.src = videosGaleria[indice].src;
