@@ -25,17 +25,50 @@
                     ❮
                 </button>
                 <!-- Reproductor -->
-                <div class="slider-contenido">
-                    <video
-                        id="video-actual"
-                        controls
-                        preload="none">
-                    </video>
-                        <div class="video-info">
-                            <h3 id="titulo-video"></h3>
-                            <p id="contador-video"></p>
-                        </div>
-                </div>
+                
+<div class="slider-contenido">
+
+    <!-- REPRODUCTOR -->
+    <div class="video-marco" id="video-marco" data-filtro="ninguno">
+        <video id="video-actual" controls preload="none"></video>
+    </div>
+    <!-- CUADRO DE INFORMACIÓN -->
+    <div class="video-info">
+        <h3 id="titulo-video"></h3>
+        <p id="contador-video"></p>
+        <!-- FILTROS -->
+        <div class="filtros-galeria" role="group" aria-label="Filtros de video">
+            <button type="button" class="filtro-btn activo"
+                    data-filtro="ninguno" aria-pressed="true">
+                Sin filtro
+            </button>
+            <button type="button" class="filtro-btn"
+                    data-filtro="pastel" aria-pressed="false">
+                Pastel
+            </button>
+            <button type="button" class="filtro-btn"
+                    data-filtro="gaussiano" aria-pressed="false">
+                Gaussiano
+            </button>
+            <button type="button" class="filtro-btn"
+                    data-filtro="cyberpunk" aria-pressed="false">
+                Cyberpunk
+            </button>
+            <button type="button" class="filtro-btn"
+                    data-filtro="vhs" aria-pressed="false">
+                VHS
+            </button>
+            <button type="button" class="filtro-btn"
+                    data-filtro="onirico" aria-pressed="false">
+                Onírico
+            </button>
+            <button type="button" class="filtro-btn"
+                    data-filtro="submarino" aria-pressed="false">
+                Bajo el agua
+            </button>
+        </div>
+    </div>
+</div>
                 <button id="siguiente" type="button" aria-label="Siguiente video">
                     ❯
                 </button>
