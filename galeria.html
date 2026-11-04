@@ -26,49 +26,87 @@
                 </button>
                 <!-- Reproductor -->
                 
+
 <div class="slider-contenido">
 
     <!-- REPRODUCTOR -->
     <div class="video-marco" id="video-marco" data-filtro="ninguno">
         <video id="video-actual" controls preload="none"></video>
     </div>
-    <!-- CUADRO DE INFORMACIÓN -->
+
+    <!-- INFORMACIÓN -->
     <div class="video-info">
-        <h3 id="titulo-video"></h3>
-        <p id="contador-video"></p>
-        <!-- FILTROS -->
+
+        <div class="video-encabezado">
+            <p id="contador-video"></p>
+            <h3 id="titulo-video"></h3>
+        </div>
+
+        <!-- TÍTULO DE FILTROS -->
+        <h3 class="titulo-interior titulo-filtros">FILTROS</h3>
+
+        <!-- BOTONES DE FILTROS -->
         <div class="filtros-galeria" role="group" aria-label="Filtros de video">
+
             <button type="button" class="filtro-btn activo"
                     data-filtro="ninguno" aria-pressed="true">
-                Sin filtro
+                <span class="filtro-preview">
+                    <img src="assets/Videos/Baseball.WEBP" alt="">
+                </span>
+                <span class="filtro-nombre">Sin filtro</span>
             </button>
+
             <button type="button" class="filtro-btn"
                     data-filtro="pastel" aria-pressed="false">
-                Pastel
+                <span class="filtro-preview">
+                    <img src="assets/Videos/Baseball.WEBP" alt="">
+                </span>
+                <span class="filtro-nombre">Pastel</span>
             </button>
+
             <button type="button" class="filtro-btn"
                     data-filtro="gaussiano" aria-pressed="false">
-                Gaussiano
+                <span class="filtro-preview">
+                    <img src="assets/Videos/Baseball.WEBP" alt="">
+                </span>
+                <span class="filtro-nombre">Gaussiano</span>
             </button>
+
             <button type="button" class="filtro-btn"
                     data-filtro="cyberpunk" aria-pressed="false">
-                Cyberpunk
+                <span class="filtro-preview">
+                    <img src="assets/Videos/Baseball.WEBP" alt="">
+                </span>
+                <span class="filtro-nombre">Cyberpunk</span>
             </button>
+
             <button type="button" class="filtro-btn"
                     data-filtro="vhs" aria-pressed="false">
-                VHS
+                <span class="filtro-preview">
+                    <img src="assets/Videos/Baseball.WEBP" alt="">
+                </span>
+                <span class="filtro-nombre">VHS</span>
             </button>
+
             <button type="button" class="filtro-btn"
-                    data-filtro="onirico" aria-pressed="false">
-                Onírico
+                    data-filtro="glitch" aria-pressed="false">
+                <span class="filtro-preview">
+                    <img src="assets/Videos/Baseball.WEBP" alt="">
+                </span>
+                <span class="filtro-nombre">Glitch RGB</span>
             </button>
+
             <button type="button" class="filtro-btn"
-                    data-filtro="submarino" aria-pressed="false">
-                Bajo el agua
+                    data-filtro="comic" aria-pressed="false">
+                <span class="filtro-preview">
+                    <img src="assets/Videos/Baseball.WEBP" alt="">
+                </span>
+                <span class="filtro-nombre">Cómic impreso</span>
             </button>
         </div>
     </div>
 </div>
+
                 <button id="siguiente" type="button" aria-label="Siguiente video">
                     ❯
                 </button>
