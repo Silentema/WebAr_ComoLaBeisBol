@@ -1209,32 +1209,34 @@ if (document.getElementById("equipo-nombre")) {
 
 //IMAGENES
 
+
 const videosGaleria = [
     {
-        titulo: "Bravos de León vs Olmecas",
+        titulo: "Con Walk-off de Esteban Quiróz los Bravos de León derrotaron 10-7 a Olmecas de Tabasco",
         src: "assets/Videos/Con Walk-off de Esteban Quiróz los Bravos de León derrotaron 10-7 a Olmecas de Tabasco.mp4"
     },
     {
-        titulo: "Guerreros vs Bravos",
+        titulo: "Guerreros vence a Bravos en el primero de la doble cartelera",
         src: "assets/Videos/Guerreros ⚔️ vence a Bravos 👏🏻 en el primero de la doble cartelera 28052026 RESUMEN ⚾.mp4"
     },
     {
-        titulo: "El Águila de Veracruz",
+        titulo: "Juego sin hit ni carrera de El Águila de Veracruz",
         src: "assets/Videos/Juego sin hit ni carrera de El Águila de Veracruz 28072023.mp4"
     },
     {
-        titulo: "Piratas vs Diablos Rojos",
+        titulo: "Piratas deja en el terreno a los Diablos Rojos",
         src: "assets/Videos/Piratas 🏴_☠️ deja en el terreno a los Diablos Rojos 👹 22062026 RESUMEN ⚾.mp4"
     },
     {
-        titulo: "Conspiradores de Querétaro",
+        titulo: "Victoria de Conspiradores de Querétaro",
         src: "assets/Videos/Victoria de Conspiradores de Querétaro 11072024.mp4"
     },
     {
-        titulo: "Leones vs Rieleros",
+        titulo: "Los Leones dejan en el terreno a los Rieleros",
         src: "assets/Videos/Los Leones 🦁 dejan en el terreno a los Rieleros 🚂 10062026 RESUMEN ⚾.mp4"
     }
 ];
+
 
 const reproductor = document.getElementById("video-actual");
 const tituloVideo = document.getElementById("titulo-video");
