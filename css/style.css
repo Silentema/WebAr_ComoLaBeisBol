@@ -1583,3 +1583,13 @@ button {
         animation: none;
     }
 }
+
+/* CENTRAR LAS FLECHAS CON EL REPRODUCTOR */
+
+.video-slider > button {
+    margin-top: 0;
+    align-self: flex-start;
+    transform: translateY(
+        calc((min(80vw, 900px) * 9 / 16 - 45px) / 2)
+    );
+}
