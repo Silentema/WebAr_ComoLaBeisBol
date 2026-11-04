@@ -1389,3 +1389,197 @@ button {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
+
+
+/* PASTEL */
+
+.filtro-btn[data-filtro="pastel"] .filtro-preview img {
+    filter: saturate(60%) brightness(120%) contrast(80%);
+}
+
+/* GAUSSIANO */
+
+.filtro-btn[data-filtro="gaussiano"] .filtro-preview img {
+    filter: blur(5px);
+}
+
+/* CYBERPUNK */
+
+.filtro-btn[data-filtro="cyberpunk"] .filtro-preview img {
+    filter: saturate(190%) contrast(125%) hue-rotate(280deg);
+}
+
+.filtro-btn[data-filtro="cyberpunk"] .filtro-preview::before {
+    background: linear-gradient(
+        125deg,
+        rgba(0, 255, 255, 0.45),
+        transparent 45%,
+        rgba(255, 0, 180, 0.55)
+    );
+    mix-blend-mode: screen;
+    opacity: 0.45;
+}
+
+/* VHS */
+
+.filtro-btn[data-filtro="vhs"] .filtro-preview img {
+    filter: saturate(75%) contrast(115%) hue-rotate(-8deg);
+    animation: vibracion-vhs 4s steps(1, end) infinite;
+}
+
+.filtro-btn[data-filtro="vhs"] .filtro-preview::after {
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        rgba(0, 0, 0, 0.35) 2px,
+        transparent 4px
+    );
+    opacity: 0.55;
+}
+
+.filtro-btn[data-filtro="vhs"] .filtro-preview::before {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 80, 0.12),
+        transparent 50%,
+        rgba(0, 255, 255, 0.12)
+    );
+    opacity: 1;
+    mix-blend-mode: screen;
+}
+
+
+/* ==========================
+   5. GLITCH RGB
+   ========================== */
+
+.video-marco[data-filtro="glitch"] video,
+.filtro-btn[data-filtro="glitch"] .filtro-preview img {
+    filter: saturate(160%) contrast(140%) hue-rotate(-12deg);
+    animation: desplazamiento-glitch 3.2s steps(1, end) infinite;
+}
+
+/* BANDAS DE INTERFERENCIA */
+
+.video-marco[data-filtro="glitch"]::before,
+.filtro-btn[data-filtro="glitch"] .filtro-preview::before {
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 12px,
+        rgba(0, 255, 255, 0.45) 13px,
+        rgba(255, 0, 110, 0.3) 15px,
+        transparent 17px
+    );
+    opacity: 0.65;
+    animation: interferencia-glitch 2s steps(1, end) infinite;
+}
+
+/* SEPARACIÓN DE COLORES */
+
+.video-marco[data-filtro="glitch"]::after,
+.filtro-btn[data-filtro="glitch"] .filtro-preview::after {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 100, 0.3),
+        transparent 45%,
+        rgba(0, 255, 255, 0.3)
+    );
+    mix-blend-mode: screen;
+    opacity: 0.7;
+    animation: interferencia-glitch 2.5s steps(1, end) infinite;
+}
+
+/* ANIMACIÓN DEL VIDEO */
+
+@keyframes desplazamiento-glitch {
+    0%, 88%, 100% {
+        transform: translateX(0);
+    }
+
+    89% {
+        transform: translateX(5px) skewX(-1deg);
+    }
+
+    91% {
+        transform: translateX(-5px);
+    }
+
+    93% {
+        transform: translateX(3px);
+    }
+}
+
+/* ANIMACIÓN DE INTERFERENCIAS */
+
+@keyframes interferencia-glitch {
+    0%, 85%, 100% {
+        transform: translateX(0);
+    }
+
+    87% {
+        transform: translateX(8px);
+    }
+
+    90% {
+        transform: translateX(-8px);
+    }
+
+    94% {
+        transform: translateX(4px);
+    }
+}
+
+
+/* ==========================
+   6. CÓMIC IMPRESO
+   ========================== */
+
+.video-marco[data-filtro="comic"] video,
+.filtro-btn[data-filtro="comic"] .filtro-preview img {
+    filter: saturate(195%) contrast(175%) brightness(108%);
+}
+
+/* TRAMA DE PUNTOS DE IMPRESIÓN */
+
+.video-marco[data-filtro="comic"]::before,
+.filtro-btn[data-filtro="comic"] .filtro-preview::before {
+    background-image: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0.6) 1px,
+        transparent 1.8px
+    );
+
+    background-size: 6px 6px;
+    mix-blend-mode: multiply;
+    opacity: 0.55;
+}
+
+/* SUPERPOSICIÓN DE COLORES POP ART */
+
+.video-marco[data-filtro="comic"]::after,
+.filtro-btn[data-filtro="comic"] .filtro-preview::after {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 230, 0, 0.20),
+        transparent 50%,
+        rgba(255, 0, 120, 0.20)
+    );
+
+    mix-blend-mode: screen;
+    opacity: 0.75;
+}
+
+/* RESPETAR PREFERENCIAS DE MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+    .video-marco[data-filtro="glitch"] video,
+    .filtro-btn[data-filtro="glitch"] .filtro-preview img,
+    .video-marco[data-filtro="glitch"]::before,
+    .video-marco[data-filtro="glitch"]::after,
+    .filtro-btn[data-filtro="glitch"] .filtro-preview::before,
+    .filtro-btn[data-filtro="glitch"] .filtro-preview::after,
+    .filtro-btn[data-filtro="vhs"] .filtro-preview img {
+        animation: none;
+    }
+}
