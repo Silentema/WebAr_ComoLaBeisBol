@@ -1251,14 +1251,19 @@ if (reproductor && tituloVideo && contadorVideo &&
     let indiceActual = 0;
 
     function mostrarVideo(indice) {
-        reproductor.pause();
-        reproductor.src = videosGaleria[indice].src;
-        reproductor.load();
+      reproductor.pause();
+      reproductor.src = videosGaleria[indice].src;
+      reproductor.load();
 
-        tituloVideo.textContent = videosGaleria[indice].titulo;
-        contadorVideo.textContent =
-            `${indice + 1} / ${videosGaleria.length}`;
-    }
+      // Reproducir automáticamente el nuevo video
+      reproductor.play().catch(error => {
+        console.log("El navegador bloqueó la reproducción automática:", error);
+      });
+
+      tituloVideo.textContent = videosGaleria[indice].titulo;
+      contadorVideo.textContent =
+        `${indice + 1} / ${videosGaleria.length}`;
+  }
 
     botonSiguiente.addEventListener("click", () => {
         indiceActual = (indiceActual + 1) % videosGaleria.length;
