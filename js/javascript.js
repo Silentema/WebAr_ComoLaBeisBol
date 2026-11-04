@@ -1209,20 +1209,65 @@ if (document.getElementById("equipo-nombre")) {
 
 //IMAGENES
 
-//datos escenciales
-const Videos = document.querySelectorAll(".video-container video");
-const videoseleccionado = document.querySelector(".Popup-video span");
-const videopop = document.querySelector(".Popup-video");
-const videoUp = document.querySelector(".Popup-video video");
-//proceso de abrir video
-Videos.forEach(vid => {
-  vid.onclick = () =>{
-    videopop.style.display = "block";
-    videoUp.src=vid.getAttribute('src');
-  }
-})
+const videosGaleria = [
+    {
+        titulo: "Bravos de León vs Olmecas",
+        src: "assets/Videos/Con Walk-off de Esteban Quiróz los Bravos de León derrotaron 10-7 a Olmecas de Tabasco.mp4"
+    },
+    {
+        titulo: "Guerreros vs Bravos",
+        src: "assets/Videos/Guerreros ⚔️ vence a Bravos 👏🏻 en el primero de la doble cartelera 28052026 RESUMEN ⚾.mp4"
+    },
+    {
+        titulo: "El Águila de Veracruz",
+        src: "assets/Videos/Juego sin hit ni carrera de El Águila de Veracruz 28072023.mp4"
+    },
+    {
+        titulo: "Piratas vs Diablos Rojos",
+        src: "assets/Videos/Piratas 🏴_☠️ deja en el terreno a los Diablos Rojos 👹 22062026 RESUMEN ⚾.mp4"
+    },
+    {
+        titulo: "Conspiradores de Querétaro",
+        src: "assets/Videos/Victoria de Conspiradores de Querétaro 11072024.mp4"
+    },
+    {
+        titulo: "Leones vs Rieleros",
+        src: "assets/Videos/Los Leones 🦁 dejan en el terreno a los Rieleros 🚂 10062026 RESUMEN ⚾.mp4"
+    }
+];
 
-videoseleccionado.onclick = () => {
-  videopop.style.display = "none";
-  videoUp.pause();
+const reproductor = document.getElementById("video-actual");
+const tituloVideo = document.getElementById("titulo-video");
+const contadorVideo = document.getElementById("contador-video");
+const botonAnterior = document.getElementById("anterior");
+const botonSiguiente = document.getElementById("siguiente");
+
+// Solo ejecutar si estamos en la página de galería
+if (reproductor && tituloVideo && contadorVideo &&
+    botonAnterior && botonSiguiente) {
+
+    let indiceActual = 0;
+
+    function mostrarVideo(indice) {
+        reproductor.pause();
+        reproductor.src = videosGaleria[indice].src;
+        reproductor.load();
+
+        tituloVideo.textContent = videosGaleria[indice].titulo;
+        contadorVideo.textContent =
+            `${indice + 1} / ${videosGaleria.length}`;
+    }
+
+    botonSiguiente.addEventListener("click", () => {
+        indiceActual = (indiceActual + 1) % videosGaleria.length;
+        mostrarVideo(indiceActual);
+    });
+
+    botonAnterior.addEventListener("click", () => {
+        indiceActual = (indiceActual - 1 + videosGaleria.length)
+            % videosGaleria.length;
+        mostrarVideo(indiceActual);
+    });
+
+    mostrarVideo(indiceActual);
 }
