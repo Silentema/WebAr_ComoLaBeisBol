@@ -1073,3 +1073,32 @@ button {
         font-size: 18px;
     }
 }
+
+/* CUADRO DE INFORMACIÓN DEL VIDEO */
+
+.video-info {
+    background-color: #4a9764;
+    padding: 20px 25px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Título del video */
+.video-info #titulo-video {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+
+/* Contador de videos */
+.video-info #contador-video {
+    color: #d5f1dd;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
