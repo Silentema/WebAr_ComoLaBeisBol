@@ -1983,3 +1983,206 @@ button {
         margin-top: 100px;
     }
 }
+
+
+/* =====================================
+   MENÚ HAMBURGUESA
+===================================== */
+
+/* Fondo detrás del menú */
+.site-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 9998;
+}
+
+.site-menu-backdrop[hidden] {
+    display: none;
+}
+
+/* Panel lateral */
+.site-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(85vw, 360px);
+    height: 100vh;
+    height: 100dvh;
+    box-sizing: border-box;
+    padding: 24px;
+
+    background: #ffffff;
+    color: #183624;
+    z-index: 9999;
+
+    overflow-y: auto;
+    transform: translateX(-105%);
+    transition: transform 0.3s ease;
+    visibility: hidden;
+}
+
+/* Menú abierto */
+.site-drawer.abierto {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+/* Evitar scroll del fondo */
+body.menu-abierto {
+    overflow: hidden;
+}
+
+/* Encabezado */
+.site-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.site-drawer-header h2 {
+    margin: 0;
+    color: inherit;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.site-menu-close {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+/* Enlaces de navegación */
+.site-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.site-menu-links a {
+    display: block;
+    padding: 14px 16px;
+    border-radius: 10px;
+
+    color: inherit;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+
+    transition: background 0.2s;
+}
+
+.site-menu-links a:hover {
+    background: #e0f3e5;
+}
+
+.site-menu-links a.actual {
+    background: #4a9764;
+    color: #ffffff;
+}
+
+/* Personalización */
+.site-menu-personalizacion {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #a7c8b0;
+}
+
+.site-menu-personalizacion h3 {
+    margin: 0 0 22px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #4a9764;
+}
+
+.site-tema-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* INTERRUPTOR */
+.site-theme-toggle {
+    width: 55px;
+    height: 30px;
+    padding: 3px;
+
+    border: none;
+    border-radius: 30px;
+    background: #aaa;
+
+    cursor: pointer;
+    transition: background 0.25s;
+}
+
+.site-theme-circulo {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff;
+
+    transition: transform 0.25s;
+}
+
+.site-theme-toggle[aria-checked="true"] {
+    background: #4a9764;
+}
+
+.site-theme-toggle[aria-checked="true"] .site-theme-circulo {
+    transform: translateX(25px);
+}
+
+/* =====================================
+   MODO OSCURO
+===================================== */
+
+html[data-tema="oscuro"] body,
+html[data-tema="oscuro"] .page {
+    background-color: #131e19;
+    color: #f0fff3;
+}
+
+html[data-tema="oscuro"] .header {
+    background-color: #17271e;
+}
+
+html[data-tema="oscuro"] .site-drawer {
+    background: #17271e;
+    color: #ffffff;
+}
+
+html[data-tema="oscuro"] .site-menu-links a:hover {
+    background: #2d4937;
+}
+
+html[data-tema="oscuro"] .site-menu-personalizacion {
+    border-color: #385741;
+}
+
+/* Movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .site-drawer {
+        transition: none;
+    }
+}
+
+/* Ajustes de móvil */
+@media (max-width: 700px) {
+    .site-drawer {
+        padding: 20px;
+    }
+
+    .site-menu-links a {
+        font-size: 18px;
+        padding: 15px 12px;
+    }
+}
+
