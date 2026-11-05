@@ -1,43 +1,105 @@
- <header class="header">
-      <button class="icon menu" aria-label="Abrir menú">
-        <svg width="35" height="35" viewBox="0 0 35 35" fill="none">
-          <path
-            d="M4.375 17.5H30.625M4.375 8.75H30.625M4.375 26.25H30.625"
-            stroke="white"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
 
-      <div class="brand">
-        <a class="card-link" href="index.html" aria-label="Pagina Principal">
-          <h1>
-            <img src="assets/logositio.png" alt="Cómo la Béisbol" class="brand-logo">
-          </h1>
-          <p>BÉISBOL EN REALIDAD AUMENTADA</p>
+<header class="header">
+
+    <!-- BOTÓN HAMBURGUESA -->
+    <button
+        class="icon menu header-menu-btn"
+        type="button"
+        aria-label="Abrir menú"
+        aria-controls="site-drawer"
+        aria-expanded="false">
+
+        <svg width="35" height="35" viewBox="0 0 35 35" fill="none">
+            <path
+                d="M4.375 17.5H30.625M4.375 8.75H30.625M4.375 26.25H30.625"
+                stroke="white"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+        </svg>
+    </button>
+
+    <!-- LOGO -->
+    <div class="brand">
+        <a class="card-link" href="index.html" aria-label="Página principal">
+            <h1>
+                <img
+                    src="assets/logositio.png"
+                    alt="Cómo la Béisbol"
+                    class="brand-logo">
+            </h1>
+            <p>BÉISBOL EN REALIDAD AUMENTADA</p>
         </a>
-      </div>
-      
-        <button class="icon camera" aria-label="Escanear">
-          <a href="escaneo.html" aria-label="Escanear">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path
+    </div>
+
+    <!-- BOTÓN DE ESCANEAR -->
+    <a class="icon camera" href="AR.html" aria-label="Escanear">
+        <svg viewBox="0 0 24 24" fill="none">
+            <path
                 d="M9 3 7.5 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.5L15 3H9Z"
                 stroke="#111"
                 stroke-width="1.7"
                 stroke-linejoin="round"
-              />
-              <circle
+            />
+            <circle
                 cx="12"
                 cy="13"
                 r="3.5"
                 stroke="#111"
                 stroke-width="1.7"
-              />
-            </svg>
-          </a>  
+            />
+        </svg>
+    </a>
+
+</header>
+
+<!-- FONDO OSCURO DEL MENÚ -->
+<div class="site-menu-backdrop" hidden></div>
+
+<!-- PANEL DEL MENÚ -->
+<aside
+    class="site-drawer"
+    id="site-drawer"
+    aria-labelledby="site-menu-title"
+    aria-hidden="true"
+    inert>
+
+    <div class="site-drawer-header">
+        <h2 id="site-menu-title">MENÚ</h2>
+        <button class="site-menu-close" type="button" aria-label="Cerrar menú">
+            &times;
         </button>
-      
-    </header>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="site-menu-links" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="AR.html">Escanear</a>
+        <a href="equipos.html">Equipos</a>
+        <a href="minijuego.html">Minijuego</a>
+        <a href="trivia.html">Trivia</a>
+        <a href="historia.html">Historia</a>
+        <a href="galeria.html">Galería</a>
+    </nav>
+
+    <!-- PERSONALIZACIÓN -->
+    <section class="site-menu-personalizacion">
+        <h3>PERSONALIZACIÓN</h3>
+
+        <div class="site-tema-fila">
+            <span>Modo oscuro</span>
+
+            <button
+                id="site-theme-toggle"
+                class="site-theme-toggle"
+                type="button"
+                role="switch"
+                aria-label="Modo oscuro"
+                aria-checked="false">
+                <span class="site-theme-circulo"></span>
+            </button>
+        </div>
+    </section>
+
+</aside>
