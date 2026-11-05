@@ -1950,3 +1950,28 @@ button {
     }
 }
 
+/* CONTENEDOR DEL SLIDER */
+
+.slider .slides {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    /* Ocultar barra de desplazamiento */
+    scrollbar-width: none;
+}
+
+.slider .slides::-webkit-scrollbar {
+    display: none;
+}
+
+/* CADA IMAGEN DEL SLIDER */
+
+.slider .slides .slide {
+    position: relative;
+    flex: 0 0 100%;
+    min-width: 0;
+    scroll-snap-align: start;
+}
