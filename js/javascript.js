@@ -20,14 +20,19 @@ fetch("componentes/header.html")
   });
 
 const cartaModelos = document.querySelectorAll(
-  '.model-viewer-container model-viewer[src^="assets/Animacioncarta"]'
+  '.model-viewer-container model-viewer[data-src^="assets/Animacioncarta"]'
 );
 
 try {
   cartaModelos.forEach((modelViewer) => {
-    const cartaSrc = modelViewer.getAttribute("src");
-    modelViewer.hidden =
-      localStorage.getItem(`cartaDesbloqueada:${cartaSrc}`) !== "true";
+    const cartaSrc = modelViewer.getAttribute("data-src");
+    const cartaDesbloqueada =
+      localStorage.getItem(`cartaDesbloqueada:${cartaSrc}`) === "true";
+
+    modelViewer.hidden = !cartaDesbloqueada;
+    if (cartaDesbloqueada) {
+      modelViewer.src = cartaSrc;
+    }
   });
 } catch (error) {
   console.error("No se pudo leer el estado de las cartas desbloqueadas.", error);
