@@ -18,9 +18,40 @@
       
 
       <div class="contenedor-general"> <!--No se como ponerle la esctructura a este div xd-->
-        <h2 class="titulo-interior">Escanear</h2>
+        <h2 class="titulo-interior">Premios desbloqueados</h2>
+        <div class="collection-tabs" role="tablist" aria-label="Tipo de premio">
+          <button
+            id="tab-cartas"
+            class="collection-tab"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-cartas"
+            tabindex="0"
+            data-collection-tab>
+            Cartas
+          </button>
+          <button
+            id="tab-gorras"
+            class="collection-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-gorras"
+            tabindex="-1"
+            data-collection-tab>
+            Gorras
+          </button>
+        </div>
+        <section
+          id="panel-cartas"
+          class="collection-panel"
+          role="tabpanel"
+          aria-labelledby="tab-cartas">
         <div class="model-viewer-container">
-            <!---Modelo de la silla-->
+            
+        
+            <!--
             <model-viewer 
             src="assets/Silla-de-angel-para-AR.glb"
             ar
@@ -38,7 +69,7 @@
               </div>
            </model-viewer>
               
-           <!---Modelo Rui-->
+           
             <model-viewer 
             src="assets/Animacioncarta.glb" 
             ar 
@@ -54,7 +85,7 @@
                 </div>
             </model-viewer>
 
-            <!---Modelo Don Chepo-->
+            
             <model-viewer 
             src="assets/DonChepo.glb" 
             ar 
@@ -71,11 +102,8 @@
                 </div>
             </model-viewer>
 
-
+        
            
-
-
-            <!---Modelo silentema-->
             <model-viewer 
             src="assets/silentema1.glb" 
             ar 
@@ -91,7 +119,180 @@
                     <div class="update-bar"></div>
                 </div>
             </model-viewer>
+            -->
+
+            <!---Modelos de las cartas apartir de aqui abajo-->
+            <model-viewer 
+            src="assets/Animacioncarta1Veracruz.glb" 
+            hidden
+            ar 
+            ar-modes="scene-viewer webxr quick-look" 
+            camera-controls 
+            tone-mapping="neutral" 
+            shadow-intensity="1" 
+            autoplay
+            scale="0.5 0.5 0.5"
+            class="model-viewer">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+
+            <model-viewer 
+            src="assets/Animacioncarta2Leon.glb" 
+            hidden
+            ar 
+            ar-modes="scene-viewer webxr quick-look" 
+            camera-controls 
+            tone-mapping="neutral" 
+            shadow-intensity="1" 
+            autoplay
+            scale="0.5 0.5 0.5"
+            class="model-viewer">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+
+            <model-viewer 
+            src="assets/Animacioncarta3Queretaro.glb" 
+            hidden
+            ar 
+            ar-modes="scene-viewer webxr quick-look" 
+            camera-controls 
+            tone-mapping="neutral" 
+            shadow-intensity="1" 
+            autoplay
+            scale="0.5 0.5 0.5"
+            class="model-viewer">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+
+            <model-viewer 
+            src="assets/Animacioncarta4CiudadDeMexico.glb" 
+            hidden
+            ar 
+            ar-modes="scene-viewer webxr quick-look" 
+            camera-controls 
+            tone-mapping="neutral" 
+            shadow-intensity="1" 
+            autoplay
+            scale="0.5 0.5 0.5"
+            class="model-viewer">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+
+            <model-viewer 
+            src="assets/Animacioncarta5Guerrero.glb" 
+            hidden
+            ar 
+            ar-modes="scene-viewer webxr quick-look" 
+            camera-controls 
+            tone-mapping="neutral" 
+            shadow-intensity="1" 
+            autoplay
+            scale="0.5 0.5 0.5"
+            class="model-viewer">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+
+            <model-viewer 
+            src="assets/Animacioncarta6Yucatan.glb" 
+            hidden
+            ar 
+            ar-modes="scene-viewer webxr quick-look" 
+            camera-controls 
+            tone-mapping="neutral" 
+            shadow-intensity="1" 
+            autoplay
+            scale="0.5 0.5 0.5"
+            class="model-viewer">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+
+            <model-viewer 
+            src="assets/Animacioncarta7Tabasco.glb" 
+            hidden
+            ar 
+            ar-modes="scene-viewer webxr quick-look" 
+            camera-controls 
+            tone-mapping="neutral" 
+            shadow-intensity="1" 
+            autoplay
+            scale="0.5 0.5 0.5"
+            class="model-viewer">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+
+            <model-viewer 
+            src="assets/Animacioncarta8Puebla.glb" 
+            hidden
+            ar 
+            ar-modes="scene-viewer webxr quick-look" 
+            camera-controls 
+            tone-mapping="neutral" 
+            shadow-intensity="1" 
+            autoplay
+            scale="0.5 0.5 0.5"
+            class="model-viewer">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+
+            <model-viewer 
+            src="assets/Animacioncarta9Campeche.glb" 
+            hidden
+            ar 
+            ar-modes="scene-viewer webxr quick-look" 
+            camera-controls 
+            tone-mapping="neutral" 
+            shadow-intensity="1" 
+            autoplay
+            scale="0.5 0.5 0.5"
+            class="model-viewer">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
+
+            <model-viewer 
+            src="assets/Animacioncarta10Qroo.glb" 
+            hidden
+            ar 
+            ar-modes="scene-viewer webxr quick-look" 
+            camera-controls 
+            tone-mapping="neutral" 
+            shadow-intensity="1" 
+            autoplay
+            scale="0.5 0.5 0.5"
+            class="model-viewer">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+            </model-viewer>
           </div>
+        </section>
+        <section
+          id="panel-gorras"
+          class="collection-panel"
+          role="tabpanel"
+          aria-labelledby="tab-gorras"
+          hidden>
+          <p class="collection-empty">
+            Aún no has desbloqueado gorras. 
+          </p>
+        </section>
       </div>
     </main>
     <script src="js/javascript.js"></script>

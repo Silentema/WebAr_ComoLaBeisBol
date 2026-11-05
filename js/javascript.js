@@ -19,6 +19,61 @@ fetch("componentes/header.html")
     console.error(error);
   });
 
+const cartaModelos = document.querySelectorAll(
+  '.model-viewer-container model-viewer[src^="assets/Animacioncarta"]'
+);
+
+try {
+  cartaModelos.forEach((modelViewer) => {
+    const cartaSrc = modelViewer.getAttribute("src");
+    modelViewer.hidden =
+      localStorage.getItem(`cartaDesbloqueada:${cartaSrc}`) !== "true";
+  });
+} catch (error) {
+  console.error("No se pudo leer el estado de las cartas desbloqueadas.", error);
+}
+
+const collectionTabs = document.querySelectorAll("[data-collection-tab]");
+const collectionPanels = document.querySelectorAll(".collection-panel");
+
+const activateCollectionTab = (selectedTab, moveFocus = false) => {
+  collectionTabs.forEach((tab) => {
+    const isSelected = tab === selectedTab;
+    tab.setAttribute("aria-selected", String(isSelected));
+    tab.tabIndex = isSelected ? 0 : -1;
+  });
+
+  collectionPanels.forEach((panel) => {
+    panel.hidden = panel.id !== selectedTab.getAttribute("aria-controls");
+  });
+
+  if (moveFocus) {
+    selectedTab.focus();
+  }
+};
+
+collectionTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => activateCollectionTab(tab));
+  tab.addEventListener("keydown", (event) => {
+    let nextIndex;
+
+    if (event.key === "ArrowRight") {
+      nextIndex = (index + 1) % collectionTabs.length;
+    } else if (event.key === "ArrowLeft") {
+      nextIndex = (index - 1 + collectionTabs.length) % collectionTabs.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = collectionTabs.length - 1;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+    activateCollectionTab(collectionTabs[nextIndex], true);
+  });
+});
+
 
 
   //Aparir de aqui voy a poner todos las demas fuciones de JS, de preferencia solo hay que usar un Archivo JS para mas simplicidad 

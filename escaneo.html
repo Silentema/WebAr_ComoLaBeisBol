@@ -100,9 +100,10 @@
         inset: 0;
         display: grid;
         place-items: center;
-        overflow: hidden;
-        background: radial-gradient(circle, #ffffff 0%, #e6e4e4 45%, #000000 100%);
-        animation: prize-background 1.8s ease both;
+        padding: 24px;
+        background: rgba(31, 83, 78, 0.96);
+        color: #fff;
+        animation: prize-fade 1.6s ease both;
       }
 
       #prize-transition[hidden] {
@@ -111,22 +112,30 @@
 
       .prize-message {
         z-index: 1;
-        padding: 32px;
-        color: #1f534e;
+        width: min(100%, 420px);
+        padding: 28px 20px;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 16px;
+        background: #1f534e;
+        color: #fff;
         text-align: center;
-        animation: prize-pop 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        animation: message-fade 1.6s ease both;
       }
 
       .prize-message span {
-        display: block;
-        margin-bottom: 8px;
-        font-size: 56px;
+        display: grid;
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 16px;
+        place-items: center;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        font: 700 36px/1 Arial, sans-serif;
       }
 
       .prize-message h1 {
         margin: 0;
         font: 800 clamp(30px, 8vw, 54px)/1.1 Arial, sans-serif;
-        text-shadow: 0 2px 0 #fff;
       }
 
       .prize-message p {
@@ -134,53 +143,37 @@
         font: 600 18px Arial, sans-serif;
       }
 
-      .confetti {
-        position: absolute;
-        top: -10%;
-        left: var(--left);
-        width: 10px;
-        height: 18px;
-        border-radius: 2px;
-        background: var(--color);
-        animation: confetti-fall var(--duration) ease-in var(--delay) both;
-      }
-
-      @keyframes prize-background {
-        0% { opacity: 0; }
-        15%, 75% { opacity: 1; }
+      @keyframes prize-fade {
+        0%, 10% { opacity: 0; }
+        20%, 75% { opacity: 1; }
         100% { opacity: 0; }
       }
 
-      @keyframes prize-pop {
-        0% { opacity: 0; transform: scale(0.45) rotate(-8deg); }
-        18%, 75% { opacity: 1; transform: scale(1) rotate(0); }
-        100% { opacity: 0; transform: scale(1.15); }
+      @keyframes message-fade {
+        0%, 15% { opacity: 0; }
+        25%, 75% { opacity: 1; }
+        100% { opacity: 0; }
       }
 
-      @keyframes confetti-fall {
-        to { transform: translate3d(var(--drift), 115vh, 0) rotate(720deg); }
+      .model-reveal {
+        animation: model-fade 0.5s ease-out both;
       }
 
-      @keyframes model-reveal {
-        from { opacity: 0; transform: scale(0.88); }
-        to { opacity: 1; transform: scale(1); }
+      @keyframes model-fade {
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
 
       @media (prefers-reduced-motion: reduce) {
         #prize-transition,
         .prize-message,
-        .confetti {
+        .model-reveal {
           animation: none;
         }
 
         #prize-transition,
         .prize-message {
           opacity: 1;
-          transform: none;
-        }
-
-        .confetti {
-          display: none;
         }
       }
     </style>
@@ -207,52 +200,52 @@
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
-        <a-gltf-model src="assets/SobreAnim3.glb"
+        <a-gltf-model src="assets/SobreAnimNuevo.glb"
                       position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 1">
-        <a-gltf-model src="assets/SobreAnim3.glb"
+        <a-gltf-model src="assets/SobreAnimNuevo.glb"
                       position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 2">
-        <a-gltf-model src="assets/SobreAnim3.glb"
+        <a-gltf-model src="assets/SobreAnimNuevo.glb"
                       position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 3">
-        <a-gltf-model src="assets/SobreAnim3.glb"
+        <a-gltf-model src="assets/SobreAnimNuevo.glb"
                       position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 4">
-        <a-gltf-model src="assets/SobreAnim3.glb"
+        <a-gltf-model src="assets/SobreAnimNuevo.glb"
                       position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 5">
-        <a-gltf-model src="assets/SobreAnim3.glb"
+        <a-gltf-model src="assets/SobreAnimNuevo.glb"
                       position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 6">
-        <a-gltf-model src="assets/SobreAnim3.glb"
+        <a-gltf-model src="assets/SobreAnimNuevo.glb"
                       position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 7">
-        <a-gltf-model src="assets/SobreAnim3.glb"
+        <a-gltf-model src="assets/SobreAnimNuevo.glb"
                       position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 8">
-        <a-gltf-model src="assets/SobreAnim3.glb"
+        <a-gltf-model src="assets/SobreAnimNuevo.glb"
                       position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
       <a-entity mindar-image-target="targetIndex: 9">
-        <a-gltf-model src="assets/SobreAnim3.glb"
+        <a-gltf-model src="assets/SobreAnimNuevo.glb"
                       position="0 0 0.1" rotation="0 90 0" scale="0.2 0.2 0.2"></a-gltf-model>
       </a-entity>
 
@@ -272,21 +265,14 @@
 
     <div id="post-prize-actions" hidden>
       <a class="post-prize-button" href="index.html">Regresar a menú</a>
-      <button class="post-prize-button" type="button">Colección de cartas</button>
+      <a class="post-prize-button" href="AR.html">Colección de cartas</a>
     </div>
 
     <div id="prize-transition" aria-live="polite" hidden>
-      <span class="confetti" aria-hidden="true" style="--left: 8%; --color: #d32c3a; --drift: 35vw; --duration: 1.4s; --delay: 0s;"></span>
-      <span class="confetti" aria-hidden="true" style="--left: 18%; --color: #fff; --drift: -20vw; --duration: 1.7s; --delay: 0.1s;"></span>
-      <span class="confetti" aria-hidden="true" style="--left: 29%; --color: #4592f6; --drift: 25vw; --duration: 1.5s; --delay: 0.2s;"></span>
-      <span class="confetti" aria-hidden="true" style="--left: 41%; --color: #d32c3a; --drift: -30vw; --duration: 1.8s; --delay: 0s;"></span>
-      <span class="confetti" aria-hidden="true" style="--left: 53%; --color: #fff; --drift: 20vw; --duration: 1.6s; --delay: 0.15s;"></span>
-      <span class="confetti" aria-hidden="true" style="--left: 64%; --color: #4592f6; --drift: -25vw; --duration: 1.5s; --delay: 0.25s;"></span>
-      <span class="confetti" aria-hidden="true" style="--left: 76%; --color: #d32c3a; --drift: 18vw; --duration: 1.7s; --delay: 0.05s;"></span>
-      <span class="confetti" aria-hidden="true" style="--left: 91%; --color: #fff; --drift: -35vw; --duration: 1.4s; --delay: 0.2s;"></span>
       <div class="prize-message">
-        <span aria-hidden="true">🏆</span>
-        <h1>Nueva Carta disponible</h1>      
+        <span aria-hidden="true">✓</span>
+        <h1>¡Nueva carta desbloqueada!</h1>
+        <p>Ya está disponible en tu colección.</p>
       </div>
     </div>
 
@@ -302,7 +288,7 @@
       const progressLabel = document.querySelector("#scan-progress-label");
       const progressTrack = document.querySelector("#scan-progress-track");
       const progressBar = document.querySelector("#scan-progress-bar");
-      const envelopeAnimationSpeed = 1.6;
+      const envelopeAnimationSpeed = 1.0;
       const cartasPorTarget = {
         0: "assets/Animacioncarta1Veracruz.glb",
         1: "assets/Animacioncarta2Leon.glb",
@@ -334,7 +320,7 @@
         transitionFinished = true;
         prizeTransition.hidden = true;
         modelViewer.hidden = false;
-        modelViewer.style.animation = "model-reveal 0.7s ease-out both";
+        modelViewer.classList.add("model-reveal");
         document.querySelector("#post-prize-actions").hidden = false;
       };
 
@@ -394,7 +380,7 @@
           scanScene.style.display = "none";
           document.querySelector("#scan-progress").hidden = true;
           prizeTransition.hidden = false;
-          window.setTimeout(finishPrizeTransition, 1900);
+          window.setTimeout(finishPrizeTransition, 1600);
         }
       };
 
@@ -460,6 +446,14 @@
               `No hay una carta configurada para targetIndex ${targetIndex}. Agrégala en cartasPorTarget.`
             );
             progressLabel.textContent = `Falta configurar la carta para el índice ${targetIndex}`;
+            return;
+          }
+
+          try {
+            localStorage.setItem(`cartaDesbloqueada:${cartaSrc}`, "true");
+          } catch (error) {
+            console.error("No se pudo guardar la carta desbloqueada.", error);
+            progressLabel.textContent = "No se pudo guardar la carta en este dispositivo";
             return;
           }
 

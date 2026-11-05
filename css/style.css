@@ -335,6 +335,47 @@ button {
   height: 600px;
 }
 
+.model-viewer-container .model-viewer[hidden] {
+  display: none;
+}
+
+.collection-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.collection-tab {
+  padding: 12px 20px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #444;
+  font: 600 16px Arial, sans-serif;
+  cursor: pointer;
+}
+
+.collection-tab[aria-selected="true"] {
+  border-bottom-color: var(--green);
+  color: var(--green);
+}
+
+.collection-tab:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+
+.collection-panel[hidden] {
+  display: none;
+}
+
+.collection-empty {
+  padding: 32px 16px;
+  color: #555;
+  text-align: center;
+}
+
 .contenedor-general {
   width: calc(100% - 32px);
   max-width: 1200px;
@@ -1756,4 +1797,3 @@ button {
     }
 
 }
-
