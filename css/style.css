@@ -1976,13 +1976,6 @@ button {
     scroll-snap-align: start;
 }
 
-/* SEPARACIÓN ENTRE HEADER Y SLIDER EN PC */
-
-@media (min-width: 701px) {
-    .page > .slider {
-        margin-top: 100px;
-    }
-}
 
 
 /* =====================================
