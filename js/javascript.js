@@ -663,15 +663,36 @@ function mostrarSlide(indice) {
 }
 
 if (slides && slideElements.length && dots.length && nextButton && previousButton) {
+
+  let intervaloSlider;
+
+  // Iniciar movimiento automático
+  function iniciarAutoplay() {
+    clearInterval(intervaloSlider);
+
+    intervaloSlider = setInterval(() => {
+      if (!document.hidden) {
+        mostrarSlide((imagenActual + 1) % slideElements.length);
+      }
+    }, 6000);
+  }
+
+  // Botón siguiente
   nextButton.addEventListener("click", () => {
     mostrarSlide((imagenActual + 1) % slideElements.length);
+    iniciarAutoplay();
   });
 
+  // Botón anterior
   previousButton.addEventListener("click", () => {
     mostrarSlide(
       (imagenActual - 1 + slideElements.length) % slideElements.length
     );
+    iniciarAutoplay();
   });
+
+  // Comenzar movimiento automático
+  iniciarAutoplay();
 }
 
 //EQUIPOS CARRUSEL
