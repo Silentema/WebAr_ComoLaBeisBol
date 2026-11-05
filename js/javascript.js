@@ -637,62 +637,83 @@ if (btnEmpezar) {
   mostrarMenu();
 }
 
-// SLIDER
+
+ // SLIDER
 const slides = document.querySelector(".slides");
-const slideElements = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
-const nextButton = document.querySelector(".next");
-const previousButton = document.querySelector(".previous");
+const slideElements = document.querySelectorAll(".slides .slide");
+const dots = document.querySelectorAll(".slider .dot");
+const nextButton = document.querySelector(".slider .next");
+const previousButton = document.querySelector(".slider .previous");
+
 let imagenActual = 0;
+let intervaloSlider = null;
 
 function actualizarDot() {
-  dots.forEach((dot, indice) => {
-    dot.classList.toggle("active", indice === imagenActual);
-  });
+    dots.forEach((dot, indice) => {
+        dot.classList.toggle("active", indice === imagenActual);
+    });
 }
 
 function mostrarSlide(indice) {
-  imagenActual = indice;
 
-  slides.scrollTo({
-    left: slides.clientWidth * imagenActual,
-    behavior: "smooth"
-  });
+    if (!slides || !slideElements.length) return;
 
-  actualizarDot();
+    imagenActual =
+        (indice + slideElements.length) % slideElements.length;
+
+    // Calcular la posición real del slide
+    const destino = slideElements[imagenActual];
+
+    const posicion =
+        slides.scrollLeft +
+        destino.getBoundingClientRect().left -
+        slides.getBoundingClientRect().left;
+
+    slides.scrollTo({
+        left: posicion,
+        behavior: "smooth"
+    });
+
+    actualizarDot();
 }
 
-if (slides && slideElements.length && dots.length && nextButton && previousButton) {
+function iniciarAutoplay() {
 
-  let intervaloSlider;
-
-  // Iniciar movimiento automático
-  function iniciarAutoplay() {
     clearInterval(intervaloSlider);
 
     intervaloSlider = setInterval(() => {
-      if (!document.hidden) {
-        mostrarSlide((imagenActual + 1) % slideElements.length);
-      }
+
+        if (!document.hidden) {
+            mostrarSlide(imagenActual + 1);
+        }
+
     }, 6000);
-  }
+}
 
-  // Botón siguiente
-  nextButton.addEventListener("click", () => {
-    mostrarSlide((imagenActual + 1) % slideElements.length);
+// Inicialización
+if (slides && slideElements.length > 1) {
+
+    // Siguiente
+    if (nextButton) {
+        nextButton.addEventListener("click", () => {
+            mostrarSlide(imagenActual + 1);
+            iniciarAutoplay();
+        });
+    }
+
+    // Anterior
+    if (previousButton) {
+        previousButton.addEventListener("click", () => {
+            mostrarSlide(imagenActual - 1);
+            iniciarAutoplay();
+        });
+    }
+
+    // Iniciar el slider automáticamente
+    actualizarDot();
     iniciarAutoplay();
-  });
 
-  // Botón anterior
-  previousButton.addEventListener("click", () => {
-    mostrarSlide(
-      (imagenActual - 1 + slideElements.length) % slideElements.length
-    );
-    iniciarAutoplay();
-  });
-
-  // Comenzar movimiento automático
-  iniciarAutoplay();
+    console.log("Autoplay del slider iniciado correctamente");
 }
 
 //EQUIPOS CARRUSEL
