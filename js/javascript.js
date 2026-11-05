@@ -4,20 +4,128 @@
 
 
 //Abrir el header xd
+
+// ===================================
+// HEADER Y MENÚ HAMBURGUESA
+// ===================================
+
+// Recuperar el tema guardado
+const temaGuardado = localStorage.getItem("temaSitio");
+
+document.documentElement.dataset.tema =
+    temaGuardado === "oscuro" ? "oscuro" : "claro";
+
+// Cargar el header
 fetch("componentes/header.html")
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("No se pudo cargar el header");
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("No se pudo cargar el header");
+        }
+        return response.text();
+    })
+    .then(header => {
+        const contenedor = document.getElementById("header-container");
+
+        if (!contenedor) return;
+
+        contenedor.innerHTML = header;
+
+        // Inicializar funciones después de cargar el HTML
+        inicializarMenuHeader(contenedor);
+    })
+    .catch(error => {
+        console.error(error);
+    });
+
+function inicializarMenuHeader(contenedor) {
+
+    const botonAbrir = contenedor.querySelector(".header-menu-btn");
+    const botonCerrar = contenedor.querySelector(".site-menu-close");
+    const menu = contenedor.querySelector(".site-drawer");
+    const fondo = contenedor.querySelector(".site-menu-backdrop");
+    const botonTema = contenedor.querySelector("#site-theme-toggle");
+
+    if (!botonAbrir || !botonCerrar || !menu || !fondo || !botonTema) {
+        return;
     }
 
-    return response.text();
-  })
-  .then(header => {
-    document.querySelector("#header-container").innerHTML = header;
-  })
-  .catch(error => {
-    console.error(error);
-  });
+    // ABRIR MENÚ
+    function abrirMenu() {
+        menu.classList.add("abierto");
+        menu.inert = false;
+        menu.setAttribute("aria-hidden", "false");
+
+        fondo.hidden = false;
+        document.body.classList.add("menu-abierto");
+
+        botonAbrir.setAttribute("aria-expanded", "true");
+        botonCerrar.focus();
+    }
+
+    // CERRAR MENÚ
+    function cerrarMenu() {
+        menu.classList.remove("abierto");
+        menu.inert = true;
+        menu.setAttribute("aria-hidden", "true");
+
+        fondo.hidden = true;
+        document.body.classList.remove("menu-abierto");
+
+        botonAbrir.setAttribute("aria-expanded", "false");
+        botonAbrir.focus();
+    }
+
+    botonAbrir.addEventListener("click", abrirMenu);
+    botonCerrar.addEventListener("click", cerrarMenu);
+    fondo.addEventListener("click", cerrarMenu);
+
+    // Cerrar con Escape
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" &&
+            menu.classList.contains("abierto")) {
+            cerrarMenu();
+        }
+    });
+
+    // MARCAR LA PÁGINA ACTUAL
+    const enlaces = menu.querySelectorAll(".site-menu-links a");
+
+    enlaces.forEach(enlace => {
+        if (new URL(enlace.href).pathname === location.pathname) {
+            enlace.classList.add("actual");
+            enlace.setAttribute("aria-current", "page");
+        }
+    });
+
+    // ===================================
+    // MODO CLARO / OSCURO
+    // ===================================
+
+    function actualizarInterruptor() {
+        const oscuro =
+            document.documentElement.dataset.tema === "oscuro";
+
+        botonTema.setAttribute("aria-checked", String(oscuro));
+    }
+
+    botonTema.addEventListener("click", () => {
+
+        const oscuro =
+            document.documentElement.dataset.tema === "oscuro";
+
+        const nuevoTema = oscuro ? "claro" : "oscuro";
+
+        document.documentElement.dataset.tema = nuevoTema;
+
+        // Guardar preferencia
+        localStorage.setItem("temaSitio", nuevoTema);
+
+        actualizarInterruptor();
+    });
+
+    actualizarInterruptor();
+}
+
 
 const cartaModelos = document.querySelectorAll(
   '.model-viewer-container model-viewer[data-src^="assets/Animacioncarta"]'
