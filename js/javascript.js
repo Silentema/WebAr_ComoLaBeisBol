@@ -139,7 +139,7 @@ try {
 
     modelViewer.hidden = !cartaDesbloqueada;
     if (cartaDesbloqueada) {
-      modelViewer.src = cartaSrc;
+      modelViewer.setAttribute("src", cartaSrc);
     }
   });
 } catch (error) {
