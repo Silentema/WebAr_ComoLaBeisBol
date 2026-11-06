@@ -1,0 +1,154 @@
+:root { color-scheme: dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #0c1c25; }
+button, a { font: inherit; }
+.juego { position: relative; width: 100%; height: 100vh; height: 100dvh; overflow: hidden; background: #142538; }
+#lienzo { display: block; width: 100%; height: 100%; touch-action: manipulation; outline-offset: -4px; }
+.marcador { position: absolute; top: max(14px,env(safe-area-inset-top)); left: 82px; display: grid; grid-template-columns: auto auto; gap: 2px 10px; align-items: center; padding: 10px 12px; border-radius: 12px; color: #fff; background: #071923bb; pointer-events: none; }
+.marcador-etiqueta { font-size: 10px; letter-spacing: 0.1em; color: #b6efc4; font-weight: 800; }
+.marcador strong { font-size: 17px; text-align: right; }
+.barra { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 7px; color: white; pointer-events: none; text-shadow: 0 2px 4px #000; }
+.barra-label {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    color: #FFD700;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+.barra-pista {
+    position: relative;
+
+    width: min(18vw, 80px);
+    height: auto;
+    aspect-ratio: 1 / 4;
+
+    background-image: url("../assets/minijuego/barra.webp");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: none;
+}
+.barra-zona-alta {
+    display: none;
+}
+
+.barra-flecha {
+    position: absolute;
+
+    top: 50%;
+    right: -70px;
+
+    width: 100px;
+    height: auto;
+    aspect-ratio: 2 / 1;
+
+    transform: translateY(-50%);
+
+    object-fit: contain;
+    pointer-events: none;
+
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.7));
+}
+.salir { position: absolute; top: max(14px,env(safe-area-inset-top)); right: 13px; padding: 10px 13px; border: 1px solid #fff9; border-radius: 12px; background: #071923bc; color: #fff; font-weight: 700; text-decoration: none; }
+
+.instrucciones {
+    position: absolute;
+
+    /* Posición superior */
+    top: max(80px, calc(env(safe-area-inset-top) + 80px));
+    bottom: auto;
+
+    /* Posición horizontal */
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+
+    /* Tamaño */
+    width: max-content;
+    max-width: 85%;
+
+    /* Apariencia */
+    color: white;
+    background: #071923ba;
+    padding: 11px 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: clamp(13px, 3.6vw, 18px);
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.resultado[hidden], [hidden] { display: none !important; }
+.resultado { position: absolute; inset: 0; display: grid; place-items: center; z-index: 20; padding: 20px; background: #030e18c9; }
+.resultado-panel { width: min(100%, 430px); border: 2px solid #bdf2ce; border-radius: 22px; padding: 26px 22px; text-align: center; background: #1f534e; color: #fff; box-shadow: 0 12px 50px #0009; }
+.resultado-panel h1 { margin: 0 0 10px; font-size: clamp(26px, 6vw, 36px); }
+.resultado-cantidad { margin: 8px 0 10px; font-size: 17px; }
+.resultado-cantidad strong { font-size: 40px; color: #8ef1b3; }
+#resultado-mensaje { line-height: 1.4; }
+.premio-nombre { color: #fbe57a; font-weight: 800; }
+.resultado-acciones { display: grid; gap: 10px; margin-top: 20px; }
+.resultado-acciones button, .salir-resultados { display: block; width: 100%; padding: 14px 12px; border: 0; border-radius: 12px; background: #8ef1b3; color: #143326; font-weight: 800; cursor: pointer; text-decoration: none; }
+.resultado-acciones button:disabled { opacity: .6; cursor: default; }
+.resultado-acciones .salir-resultados { background: #ffffff22; color: #fff; border: 1px solid #fff8; }
+@media (max-width: 400px) { .marcador { left: 58px; padding: 6px; gap: 1px 5px; } .marcador strong { font-size: 14px; } .barra { left: 7px; } .barra-pista { width: 23px; } .barra-flecha { right: -22px; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+@media (max-width: 700px) {
+    .barra-pista {
+        width: clamp(80px, 15vw, 105px);
+        height: auto;
+        aspect-ratio: 1 / 4;
+    }
+}
+
+.numero-verde {
+    color: #39FF14;
+}
+
+.numero-rojo {
+    color: #FF3333;
+}
+
+@media (max-width: 700px) {
+    .barra-flecha {
+        right: -65px;
+    }
+}
+
+.boton-sonido {
+    position: absolute;
+
+    top: max(14px, env(safe-area-inset-top));
+    right: 100px;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #071923bc;
+    border: 1px solid #fff9;
+    border-radius: 12px;
+
+    color: white;
+    font-size: 24px;
+
+    cursor: pointer;
+    z-index: 10;
+}
+
+.boton-sonido:active {
+    transform: scale(0.93);
+}
+
+@media (max-width: 700px) {
+    .boton-sonido {
+        right: 130px;
+        width: 40px;
+        height: 40px;
+    }
+}
