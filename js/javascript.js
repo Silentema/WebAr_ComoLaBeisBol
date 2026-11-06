@@ -274,6 +274,7 @@ if (panelGorras) {
             visor.setAttribute("src", ruta);
             visor.setAttribute("loading", "lazy");
             visor.setAttribute("camera-controls", "");
+            visor.setAttribute("touch-action", "pan-y");
             visor.setAttribute("auto-rotate", "");
             visor.setAttribute("ar", "");
             visor.setAttribute("ar-modes", "scene-viewer webxr quick-look");
