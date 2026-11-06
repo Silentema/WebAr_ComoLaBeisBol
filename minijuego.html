@@ -1,57 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Como la beisbol</title>
-        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-        <link rel="stylesheet" href="css/style.css">
-        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>    
-    </head>
-    <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0c1c25">
+  <title>Minijuego de bateo | Cómo la Béisbol</title>
+  <link rel="stylesheet" href="css/minijuego.css">
+  <script src="js/minijuego.js" defer></script>
+</head>
+<body>
+  <main class="juego" id="juego">
+    <canvas id="lienzo" tabindex="0" aria-label="Zona de juego. Toca para batear cuando la flecha esté arriba."></canvas>
 
+    <div class="marcador" aria-live="off">
+      <span class="marcador-etiqueta">META</span>
+      <strong id="meta-puntos">750</strong>
+      <span class="marcador-etiqueta">RÉCORD</span>
+      <strong id="record-puntos">0</strong>
+    </div>
 
-    <main class="page">
-      <div id="header-container">
-        <!-- El contenido del header se carga aquí mediante JavaScript asi creo que es mas facil de enteder, mas modular xd -->
+    <div class="barra" aria-label="Medidor de potencia. Arriba vale más puntos.">
+      <span class="barra-label numero-verde">1000</span>
+
+      <div class="barra-pista">
+        <div class="barra-zona-alta"></div>
+        <img
+          src="assets/minijuego/flecha.webp"
+          class="barra-flecha"
+          id="barra-flecha"
+          alt=""
+          aria-hidden="true"
+        >
       </div>
-      
 
-      <div class="contenedor-general"> <!--No se como ponerle la esctructura a este div xd-->
-        <h2 class="titulo-interior">MINIJUEGO</h2>
+      <span class="barra-label numero-rojo">0</span>
+    </div>
 
-        <button class="Menu1" id="Open-Modal">Recibir Premio</button>
-        
-        <div class="Modal" id="Modal">
-          <div class="Modal-inner">
-            <span class="Close" id="Close-Modal">&times;</span>
-            <h2>¡Felicidades!</h2>
-            
-              <model-viewer 
-              src="assets/GorraPiratas.glb"
-              ar
-              ar-modes="scene-viewer webxr quick-look"
-              camera-controls
-              tone-mapping="neutral"
-              shadow-intensity="1"
-              scale="0.1 0.1 0.1"
-              class="model-viewer"
-              id="miModelo"
-              >
-                <div class="progress-bar hide" slot="progress-bar">
-                    <div class="update-bar"></div>
-                </div>
-            </model-viewer>
-            <button onclick="cambiarModelo()">Cambiar modelo</button><!--me quede en cambiar el modelo pero necesito modificar que se cambian a cada rato-->
-            <p>Has ganado un premio por completar el minijuego.</p>
-          </div>
+    <button
+      type="button"
+      class="boton-sonido"
+      id="boton-sonido"
+      aria-label="Sonido"
+      aria-pressed="true"
+    >
+      🔊
+    </button>
+
+    <a class="salir" href="index.html" aria-label="Salir del minijuego">Salir ✕</a>
+    <p class="instrucciones" id="instrucciones">Toca la pantalla cuando la flecha esté arriba para batear</p>
+
+    <section class="resultado" id="resultado" hidden role="dialog" aria-modal="true" aria-labelledby="resultado-titulo">
+      <div class="resultado-panel">
+        <h1 id="resultado-titulo">Resultado</h1>
+        <p class="resultado-cantidad"><strong id="puntos-obtenidos">0</strong> / 1000 puntos</p>
+        <p id="resultado-mensaje"></p>
+        <p id="premio-nombre" class="premio-nombre" hidden></p>
+        <div class="resultado-acciones">
+          <button id="reclamar" type="button" hidden>Recibir premio</button>
+          <button id="reintentar" type="button" hidden>Reintentar</button>
+          <a href="index.html" class="salir-resultados">Salir</a>
         </div>
-        
       </div>
-      
-    </main>
-    <script src="js/javascript.js"></script>
-    </body>
+    </section>
+  </main>
+</body>
 </html>
