@@ -242,6 +242,51 @@ function cambiarModelo() {
     modelViewer.src = modelos[modeloActual];
 }
 
+const panelGorras = document.getElementById("panel-gorras");
+
+if (panelGorras) {
+    let gorrasDesbloqueadas = [];
+
+    try {
+        const datos = JSON.parse(
+            localStorage.getItem("gorrasDesbloqueadas") || "[]"
+        );
+
+        if (Array.isArray(datos)) {
+            gorrasDesbloqueadas = datos;
+        }
+    } catch (error) {
+        console.error("Error al cargar las gorras:", error);
+    }
+
+    const gorrasDisponibles = modelos.filter(ruta =>
+        ruta.startsWith("assets/Gorra") &&
+        gorrasDesbloqueadas.includes(ruta)
+    );
+
+    if (gorrasDisponibles.length > 0) {
+        const contenedor = document.createElement("div");
+        contenedor.className = "model-viewer-container";
+
+        gorrasDisponibles.forEach(ruta => {
+            const visor = document.createElement("model-viewer");
+
+            visor.setAttribute("src", ruta);
+            visor.setAttribute("loading", "lazy");
+            visor.setAttribute("camera-controls", "");
+            visor.setAttribute("auto-rotate", "");
+            visor.setAttribute("ar", "");
+            visor.setAttribute("ar-modes", "scene-viewer webxr quick-look");
+            visor.setAttribute("shadow-intensity", "1");
+
+            visor.classList.add("model-viewer");
+
+            contenedor.appendChild(visor);
+        });
+
+        panelGorras.replaceChildren(contenedor);
+    }
+}
 // - - - - - TRIVIA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // - - - - - PREGUNTAS
