@@ -295,17 +295,60 @@
           </div>
         </section>
         <section
-          id="panel-gorras"
-          class="collection-panel"
-          role="tabpanel"
-          aria-labelledby="tab-gorras"
-          hidden>
-          <p class="collection-empty">
-            Aún no has desbloqueado gorras. 
-          </p>
+            id="panel-gorras"
+            class="collection-panel"
+            role="tabpanel"
+            aria-labelledby="tab-gorras"
+            hidden>
+
+            <div class="model-viewer-container" id="coleccion-gorras">
+                <p class="collection-empty">
+                    Aún no has desbloqueado gorras.
+                </p>
+            </div>
         </section>
+          
       </div>
     </main>
     <script src="js/javascript.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const contenedor = document.getElementById("coleccion-gorras");
+
+        let gorrasDesbloqueadas = [];
+
+        try {
+            gorrasDesbloqueadas = JSON.parse(
+                localStorage.getItem("gorrasDesbloqueadas") || "[]"
+            );
+        } catch (error) {
+            console.error("Error al cargar las gorras:", error);
+        }
+
+        if (!Array.isArray(gorrasDesbloqueadas) || gorrasDesbloqueadas.length === 0) {
+            return;
+        }
+
+        contenedor.innerHTML = "";
+
+        gorrasDesbloqueadas.forEach(ruta => {
+            const modelo = document.createElement("model-viewer");
+
+            modelo.setAttribute("src", ruta);
+            modelo.setAttribute("loading", "lazy");
+            modelo.setAttribute("camera-controls", "");
+            modelo.setAttribute("auto-rotate", "");
+            modelo.setAttribute("ar", "");
+            modelo.setAttribute("ar-modes", "scene-viewer webxr quick-look");
+            modelo.setAttribute("tone-mapping", "neutral");
+            modelo.setAttribute("shadow-intensity", "1");
+            modelo.classList.add("model-viewer");
+
+            contenedor.appendChild(modelo);
+        });
+    });
+    </script>
+        
     </body>
 </html>
