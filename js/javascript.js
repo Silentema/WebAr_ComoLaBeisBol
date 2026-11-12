@@ -131,6 +131,38 @@ const cartaModelos = document.querySelectorAll(
   '.model-viewer-container model-viewer[data-src^="assets/Animacioncarta"]'
 );
 
+const modeloEnVistaObserver = "IntersectionObserver" in window
+  ? new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        const modelViewer = entrada.target;
+        const modeloSrc = modelViewer.getAttribute("data-src");
+
+        if (entrada.isIntersecting) {
+          if (modeloSrc && modelViewer.getAttribute("src") !== modeloSrc) {
+            modelViewer.setAttribute("src", modeloSrc);
+          }
+        } else if (modelViewer.hasAttribute("src")) {
+          if (typeof modelViewer.pause === "function") {
+            modelViewer.pause();
+          }
+          modelViewer.removeAttribute("src");
+        }
+      });
+    }, { rootMargin: "150px 0px" })
+  : null;
+
+window.observarModeloEnVista = (modelViewer) => {
+  if (modeloEnVistaObserver) {
+    modeloEnVistaObserver.observe(modelViewer);
+    return;
+  }
+
+  const modeloSrc = modelViewer.getAttribute("data-src");
+  if (modeloSrc) {
+    modelViewer.setAttribute("src", modeloSrc);
+  }
+};
+
 try {
   cartaModelos.forEach((modelViewer) => {
     const cartaSrc = modelViewer.getAttribute("data-src");
@@ -139,7 +171,7 @@ try {
 
     modelViewer.hidden = !cartaDesbloqueada;
     if (cartaDesbloqueada) {
-      modelViewer.setAttribute("src", cartaSrc);
+      window.observarModeloEnVista(modelViewer);
     }
   });
 } catch (error) {
@@ -242,52 +274,6 @@ function cambiarModelo() {
     modelViewer.src = modelos[modeloActual];
 }
 
-const panelGorras = document.getElementById("panel-gorras");
-
-if (panelGorras) {
-    let gorrasDesbloqueadas = [];
-
-    try {
-        const datos = JSON.parse(
-            localStorage.getItem("gorrasDesbloqueadas") || "[]"
-        );
-
-        if (Array.isArray(datos)) {
-            gorrasDesbloqueadas = datos;
-        }
-    } catch (error) {
-        console.error("Error al cargar las gorras:", error);
-    }
-
-    const gorrasDisponibles = modelos.filter(ruta =>
-        ruta.startsWith("assets/Gorra") &&
-        gorrasDesbloqueadas.includes(ruta)
-    );
-
-    if (gorrasDisponibles.length > 0) {
-        const contenedor = document.createElement("div");
-        contenedor.className = "model-viewer-container";
-
-        gorrasDisponibles.forEach(ruta => {
-            const visor = document.createElement("model-viewer");
-
-            visor.setAttribute("src", ruta);
-            visor.setAttribute("loading", "lazy");
-            visor.setAttribute("camera-controls", "");
-            visor.setAttribute("touch-action", "pan-y");
-            visor.setAttribute("auto-rotate", "");
-            visor.setAttribute("ar", "");
-            visor.setAttribute("ar-modes", "scene-viewer webxr quick-look");
-            visor.setAttribute("shadow-intensity", "1");
-
-            visor.classList.add("model-viewer");
-
-            contenedor.appendChild(visor);
-        });
-
-        panelGorras.replaceChildren(contenedor);
-    }
-}
 // - - - - - TRIVIA - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // - - - - - PREGUNTAS

@@ -345,7 +345,7 @@
         gorrasDesbloqueadas.forEach(ruta => {
             const modelo = document.createElement("model-viewer");
 
-            modelo.setAttribute("src", ruta);
+            modelo.setAttribute("data-src", ruta);
             modelo.setAttribute("loading", "lazy");
             modelo.setAttribute("camera-controls", "");
             modelo.setAttribute("auto-rotate", "");
@@ -356,6 +356,7 @@
             modelo.classList.add("model-viewer");
 
             contenedor.appendChild(modelo);
+            window.observarModeloEnVista(modelo);
         });
     });
     </script>
