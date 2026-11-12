@@ -228,7 +228,7 @@
 
     <a-scene mindar-image="imageTargetSrc: assets/targets(Todos).mind;"
          color-space="sRGB"
-         renderer="colorManagement: true; physicallyCorrectLights: true; preserveDrawingBuffer: true; alpha: true"
+         renderer="colorManagement: true; physicallyCorrectLights: true; alpha: true"
          vr-mode-ui="enabled: false"
          device-orientation-permission-ui="enabled: false">
 
@@ -363,12 +363,19 @@
         const mindarSystem = scanScene.systems["mindar-image-system"];
         const video = mindarSystem?.video;
         const rendererCanvas = scanScene.canvas;
+        const screenshot = scanScene.components.screenshot;
 
         if (!video || video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA ||
-            !rendererCanvas || !rendererCanvas.width || !rendererCanvas.height) {
+            !rendererCanvas || !rendererCanvas.width || !rendererCanvas.height ||
+            !screenshot) {
           throw new Error("La cámara o la escena AR todavía no están listas.");
         }
 
+        scanScene.setAttribute("screenshot", {
+          width: rendererCanvas.width,
+          height: rendererCanvas.height
+        });
+        const arCanvas = scanScene.components.screenshot.getCanvas("perspective");
         const photoCanvas = document.createElement("canvas");
         photoCanvas.width = rendererCanvas.width;
         photoCanvas.height = rendererCanvas.height;
@@ -397,7 +404,7 @@
           sourceX, sourceY, sourceWidth, sourceHeight,
           0, 0, photoCanvas.width, photoCanvas.height
         );
-        context.drawImage(rendererCanvas, 0, 0);
+        context.drawImage(arCanvas, 0, 0, photoCanvas.width, photoCanvas.height);
 
         return new Promise((resolve, reject) => {
           photoCanvas.toBlob((blob) => {
