@@ -42,6 +42,17 @@
             data-collection-tab>
             Gorras
           </button>
+          <button
+            id="tab-imagenes"
+            class="collection-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-imagenes"
+            tabindex="-1"
+            data-collection-tab>
+            Imágenes
+          </button>
         </div>
         <section
           id="panel-cartas"
@@ -317,10 +328,21 @@
                 </p>
             </div>
         </section>
+        <section
+            id="panel-imagenes"
+            class="collection-panel"
+            role="tabpanel"
+            aria-labelledby="tab-imagenes"
+            hidden>
+            <div class="photo-collection" id="coleccion-imagenes">
+                <p class="collection-empty">Aún no has tomado fotos.</p>
+            </div>
+        </section>
           
       </div>
     </main>
     <script src="js/javascript.js"></script>
+    <script src="js/fotos-ar.js"></script>
 
     <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -359,6 +381,80 @@
             window.observarModeloEnVista(modelo);
         });
     });
+
+    const contenedorFotos = document.getElementById("coleccion-imagenes");
+    const urlsFotos = new Map();
+
+    const mostrarFotos = async () => {
+        try {
+            const fotos = await window.coleccionFotosAR.listar();
+            urlsFotos.forEach((url) => URL.revokeObjectURL(url));
+            urlsFotos.clear();
+            contenedorFotos.replaceChildren();
+
+            if (fotos.length === 0) {
+                contenedorFotos.innerHTML =
+                    '<p class="collection-empty">Aún no has tomado fotos.</p>';
+                return;
+            }
+
+            fotos.forEach((foto) => {
+                const url = URL.createObjectURL(foto.imagen);
+                urlsFotos.set(foto.id, url);
+
+                const tarjeta = document.createElement("article");
+                tarjeta.className = "photo-card";
+
+                const imagen = document.createElement("img");
+                imagen.src = url;
+                imagen.alt = `Foto tomada el ${new Date(foto.fecha).toLocaleString()}`;
+
+                const fecha = document.createElement("p");
+                fecha.className = "photo-date";
+                fecha.textContent = new Date(foto.fecha).toLocaleString();
+
+                const acciones = document.createElement("div");
+                acciones.className = "photo-actions";
+
+                const descargar = document.createElement("a");
+                descargar.className = "photo-action";
+                descargar.href = url;
+                descargar.download = `foto-ar-${foto.id}.jpg`;
+                descargar.textContent = "Descargar";
+
+                const eliminar = document.createElement("button");
+                eliminar.className = "photo-action";
+                eliminar.type = "button";
+                eliminar.textContent = "Eliminar";
+                eliminar.addEventListener("click", async () => {
+                    eliminar.disabled = true;
+                    try {
+                        await window.coleccionFotosAR.eliminar(foto.id);
+                        URL.revokeObjectURL(url);
+                        urlsFotos.delete(foto.id);
+                        tarjeta.remove();
+                        if (!contenedorFotos.querySelector(".photo-card")) {
+                            contenedorFotos.innerHTML =
+                                '<p class="collection-empty">Aún no has tomado fotos.</p>';
+                        }
+                    } catch (error) {
+                        console.error("No se pudo eliminar la foto.", error);
+                        eliminar.disabled = false;
+                    }
+                });
+
+                acciones.append(descargar, eliminar);
+                tarjeta.append(imagen, fecha, acciones);
+                contenedorFotos.appendChild(tarjeta);
+            });
+        } catch (error) {
+            console.error("No se pudieron cargar las fotos guardadas.", error);
+            contenedorFotos.innerHTML =
+                '<p class="collection-empty">No se pudieron cargar tus fotos.</p>';
+        }
+    };
+
+    mostrarFotos();
     </script>
         
     </body>
